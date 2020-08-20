@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Logout AlertVC-->
+        <scene sceneID="5fq-tW-haC">
+            <objects>
+                <viewController storyboardIdentifier="LogoutAlertVC" id="2hG-Ky-Kr2" customClass="LogoutAlertVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5UF-6B-PJI"/>
+                        <viewControllerLayoutGuide type="bottom" id="pFX-e0-NBb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MlO-cv-9Zd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-VS-i6y">
+                                <rect key="frame" x="16" y="162" width="288" height="156.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kh-lJ-fRh">
+                                        <rect key="frame" x="20" y="20" width="81" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedString" value="sign_out"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ure you want to sign out?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuf-1V-783">
+                                        <rect key="frame" x="20" y="56.5" width="248" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedString" value="want_to_sign_out"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcL-ir-15h">
+                                        <rect key="frame" x="126" y="107.5" width="55" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="CANCEL">
+                                            <color key="titleColor" red="0.58823529409999997" green="0.45882352939999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedString" value="cancel"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="afK-lA-Bpk">
+                                        <rect key="frame" x="201" y="107.5" width="67" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="SIGN OUT">
+                                            <color key="titleColor" red="0.58823529409999997" green="0.45882352939999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedString" value="sign_out"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fcL-ir-15h" firstAttribute="top" secondItem="afK-lA-Bpk" secondAttribute="top" id="7ta-xh-Hmz"/>
+                                    <constraint firstItem="kuf-1V-783" firstAttribute="leading" secondItem="3Kh-lJ-fRh" secondAttribute="leading" id="BHo-xO-ebJ"/>
+                                    <constraint firstItem="3Kh-lJ-fRh" firstAttribute="top" secondItem="zFb-VS-i6y" secondAttribute="top" constant="20" id="FbM-wJ-mck"/>
+                                    <constraint firstAttribute="trailing" secondItem="afK-lA-Bpk" secondAttribute="trailing" constant="20" id="Nuo-J7-TQE"/>
+                                    <constraint firstItem="afK-lA-Bpk" firstAttribute="leading" secondItem="fcL-ir-15h" secondAttribute="trailing" constant="20" id="OHX-Q5-K3J"/>
+                                    <constraint firstItem="kuf-1V-783" firstAttribute="trailing" secondItem="afK-lA-Bpk" secondAttribute="trailing" id="VcQ-vE-DMB"/>
+                                    <constraint firstItem="3Kh-lJ-fRh" firstAttribute="leading" secondItem="zFb-VS-i6y" secondAttribute="leading" constant="20" id="WHq-gh-Iey"/>
+                                    <constraint firstAttribute="bottom" secondItem="afK-lA-Bpk" secondAttribute="bottom" constant="20" id="g0j-Jo-TmN"/>
+                                    <constraint firstItem="kuf-1V-783" firstAttribute="top" secondItem="3Kh-lJ-fRh" secondAttribute="bottom" constant="10" id="xUo-CV-qrC"/>
+                                    <constraint firstItem="fcL-ir-15h" firstAttribute="top" secondItem="kuf-1V-783" secondAttribute="bottom" constant="10" id="ybU-R4-hS1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.46045590753424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zFb-VS-i6y" firstAttribute="width" secondItem="MlO-cv-9Zd" secondAttribute="width" multiplier="0.9" id="AO7-8Q-cCQ"/>
+                            <constraint firstItem="zFb-VS-i6y" firstAttribute="centerY" secondItem="MlO-cv-9Zd" secondAttribute="centerY" id="Jok-Ip-Jxk"/>
+                            <constraint firstItem="zFb-VS-i6y" firstAttribute="width" secondItem="MlO-cv-9Zd" secondAttribute="width" multiplier="0.7" id="aax-uv-UIE"/>
+                            <constraint firstItem="zFb-VS-i6y" firstAttribute="centerX" secondItem="MlO-cv-9Zd" secondAttribute="centerX" id="y4q-KP-xzR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aax-uv-UIE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="AO7-8Q-cCQ"/>
+                                <include reference="aax-uv-UIE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="fcL-ir-15h" id="DBA-0s-F2c"/>
+                        <outlet property="messageLbl" destination="kuf-1V-783" id="KtZ-dh-aWb"/>
+                        <outlet property="okBtn" destination="afK-lA-Bpk" id="YNJ-CP-1pR"/>
+                        <outlet property="titleLbl" destination="3Kh-lJ-fRh" id="ifq-4E-fv9"/>
+                        <outlet property="view" destination="MlO-cv-9Zd" id="xZT-eT-xX0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qb-D6-Bxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="466"/>
+        </scene>
+    </scenes>
+</document>
