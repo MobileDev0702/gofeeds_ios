@@ -440,7 +440,7 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         }
         
         //        let currentId = LoginSession.getValueOf(key: SessionKeys.fToken)
-        //        let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
+//                let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
         //
         //        let ref = Database.database().reference().child("messages")
         //        let childRef = ref.childByAutoId()
@@ -463,17 +463,17 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         //        self.userChat_toId.append(self.reciever_ftoken!)
         //        self.userChat_fromId.append(currentId)
         //        self.userChat_text.append(self.inputTextField.text!)
-        //        let seconds = timeStamp.doubleValue
-        //        let timeStampDate = NSDate(timeIntervalSince1970: seconds)
-        //        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateFormat = "hh:mm:ss a "
-        //        let dateString = dateFormatter.string(from: timeStampDate as Date)
+//                let seconds = timeStamp.doubleValue
+//                let timeStampDate = NSDate(timeIntervalSince1970: seconds)
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "hh:mm:ss a "
+//                let dateString = dateFormatter.string(from: timeStampDate as Date)
         //
-        //        DispatchQueue.main.async {
-        //            self.sendPush(txt: self.inputTextField.text!, senderId: self.currentUserFToken,msgDate: dateString)
-        //            self.collectionView.reloadData()
-        //        }
-        //        self.inputTextField.text = nil
+//                DispatchQueue.main.async {
+//                    self.sendPush(txt: self.inputTextField.text!, senderId: self.currentUserFToken,msgDate: dateString)
+//                    self.collectionView.reloadData()
+//                }
+//                self.inputTextField.text = nil
         
     }
     
