@@ -74,15 +74,15 @@ class ForumAnswerListVC: UIViewController {
         let indexP = IndexPath(row: sender.tag, section: 0)
         let cell = forumTable.cellForRow(at: indexP) as! CommonTableViewCell
         let data = listArray.object(at: indexP.row) as! NSDictionary
-        let voteInt = Int(cell.voteLabel.text!)! + 1
-        cell.voteLabel.text = "\(voteInt)"
         
         let url = UpdateVote
         
-        Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": voteInt, "question_id": (questionData["question_id"] as! String)]).responseJSON { response in
+        Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! + 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.currentUserId)]).responseJSON { response in
             let value = response.result.value as! [String:Any]?
             let BoolValue = value?["success"] as! Bool
             if(BoolValue == true) {
+                let voteInt = Int(cell.voteLabel.text!)! + 1
+                cell.voteLabel.text = "\(voteInt)"
                 self.listArray = value?["answers"] as! NSArray
                 self.forumTable.reloadData()
             }else {
@@ -96,16 +96,16 @@ class ForumAnswerListVC: UIViewController {
         let indexP = IndexPath(row: sender.tag, section: 0)
         let cell = forumTable.cellForRow(at: indexP) as! CommonTableViewCell
         let data = listArray.object(at: indexP.row) as! NSDictionary
-        let voteInt = Int(cell.voteLabel.text!)! - 1
-        if voteInt > -1 {
-            cell.voteLabel.text = "\(voteInt)"
-            
+        
+        if (Int(cell.voteLabel.text!)! - 1) > -1 {
             let url = UpdateVote
             
-            Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": voteInt, "question_id": (questionData["question_id"] as! String)]).responseJSON { response in
+            Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! - 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.currentUserId)]).responseJSON { response in
                 let value = response.result.value as! [String:Any]?
                 let BoolValue = value?["success"] as! Bool
                 if(BoolValue == true) {
+                    let voteInt = Int(cell.voteLabel.text!)! - 1
+                    cell.voteLabel.text = "\(voteInt)"
                     self.listArray = value?["answers"] as! NSArray
                     self.forumTable.reloadData()
                 }else {
