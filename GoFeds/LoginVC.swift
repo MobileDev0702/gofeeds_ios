@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import FirebaseMessaging
 
 class LoginVC: UIViewController {
     
@@ -20,6 +21,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     
     //MARK:- Variables
+    var ftoken: String!
     
     
     //MARK:- ViewController LifeCycle
@@ -32,6 +34,13 @@ class LoginVC: UIViewController {
         if LoginSession.isActive(){
             self.navigateToHome()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)
+    }
+    
+    @objc func getToken(_ notification: Notification) {
+        let dict = notification.userInfo as! [String:String]
+        ftoken = dict["token"]!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +76,7 @@ class LoginVC: UIViewController {
         }else {
             Utility.showActivityIndicator()
             let url = loginUrl
-            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "device_id": "shdjshdjs"]).responseJSON { response in
+            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "device_id":"asdfasd"]).responseJSON { response in
                 
                 DispatchQueue.main.async {
                     
@@ -81,9 +90,9 @@ class LoginVC: UIViewController {
                     let BoolValue = value?["success"] as! Bool
                     if(BoolValue == true) {
                         print(value!)
-                        
+
                         _ = CurrentUserInfo(dict: value! as NSDictionary)
-                        
+
                         // let firstName = value!["firstname"] as! String
                         //let lastName = value!["lastname"] as! String
                         let userName = value!["username"] as! String
@@ -98,13 +107,13 @@ class LoginVC: UIViewController {
                             office = value?["office"] as! String
                         }
                         let email = self.emailAddressText.text!
-                        
+
                         LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: showID, desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort, office: office)
-                        
+
                         // Clrar Trextfields
                         weakSelf?.emailAddressText.text = ""
                         weakSelf?.psswrdTextfld.text = ""
-                        
+
                         Utility.hideActivityIndicator()
                         weakSelf?.navigateToHome()
                     }else {

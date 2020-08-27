@@ -384,7 +384,7 @@ extension ChatVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         //  chatController.recieverImgUrl = ""
-        // chatController.reciever_ftoken = "" // userData["ftoken"] as? String
+//         chatController.reciever_ftoken = "" // userData["ftoken"] as? String
         
         chatController.currentConversation = conversations[indexPath.row]
         self.navigationController?.pushViewController(chatController, animated: true)

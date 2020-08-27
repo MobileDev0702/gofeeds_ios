@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import IQKeyboardManagerSwift
+import Alamofire
 
 class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICollectionViewDelegateFlowLayout{
     
@@ -70,6 +71,19 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         collectionView.keyboardDismissMode = .interactive
         print(userChat_text)
         //print(reciever_ftoken!)
+        
+        let url = MyProfileUrl
+        
+        Alamofire.request(url,  method: .post, parameters: ["user_id": recieverUID]).responseJSON { response in
+            let value = response.result.value as! [String:Any]?
+            let BoolValue = value?["success"] as! Bool
+            if(BoolValue == true) {
+                self.reciever_ftoken = value?["gf_ftoken"] as! String
+            }else {
+                let okAction: AlertButtonWithAction = (.ok, nil)
+                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
+            }
+        }
         
         // self.updateRealtimeChat()
         
@@ -440,7 +454,7 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         }
         
         //        let currentId = LoginSession.getValueOf(key: SessionKeys.fToken)
-//                let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
+                let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
         //
         //        let ref = Database.database().reference().child("messages")
         //        let childRef = ref.childByAutoId()
@@ -463,16 +477,16 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         //        self.userChat_toId.append(self.reciever_ftoken!)
         //        self.userChat_fromId.append(currentId)
         //        self.userChat_text.append(self.inputTextField.text!)
-//                let seconds = timeStamp.doubleValue
-//                let timeStampDate = NSDate(timeIntervalSince1970: seconds)
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "hh:mm:ss a "
-//                let dateString = dateFormatter.string(from: timeStampDate as Date)
+                let seconds = timeStamp.doubleValue
+                let timeStampDate = NSDate(timeIntervalSince1970: seconds)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "hh:mm:ss a "
+                let dateString = dateFormatter.string(from: timeStampDate as Date)
         //
-//                DispatchQueue.main.async {
-//                    self.sendPush(txt: self.inputTextField.text!, senderId: self.currentUserFToken,msgDate: dateString)
-//                    self.collectionView.reloadData()
-//                }
+                DispatchQueue.main.async {
+                    self.sendPush(txt: self.inputTextField.text!, senderId: self.currentUserFToken,msgDate: dateString)
+                    self.collectionView.reloadData()
+                }
 //                self.inputTextField.text = nil
         
     }
@@ -746,10 +760,35 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         //old: AAAAILl1l18:APA91bGJp3x2-Cjlh0rEGoduuVryFtt1eokyutTSd2E9xVgM8orXIAOmf_YanCSzQX7zIuqtDbprEGeuBhTmuSr6dqu-ec0p_j06WkiWgtydDJK6obuR-im2QZ3W5om8xhs9cxG-lKNk
         // print(self.postId)
         //        let defaultValue = UserDefaults.standard
+        /*
+        let urlString = "https://fcm.googleapis.com/fcm/send"
+        let url = NSURL(string: urlString)!
+        let paramString: [String : Any] = ["to" : token,
+                                           "notification" : ["title" : title, "body" : body],
+                                           "data" : ["user" : "test_id", "friendId" : friendId, "friendName" : friendName, "friendCode" : friendCode, "roomId" : roomId]
+        ]
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject:paramString, options: [.prettyPrinted])
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("key=AAAA0B_rvjs:APA91bFMWZzd6iVyt4IEpL3HG2FyBtY46AfWivexdTb7PyP5kqRYLwOrZc0sP-sAEF419nG5Vmm97TnnmWol_2j12w47m25W0XgHMNWbf9dnFgAYuwc4BNA16e3gO2lyKjHVYX4d5o_AVMmsCY6MTD-IOQ0RUMfg8w", forHTTPHeaderField: "Authorization")
+        let task =  URLSession.shared.dataTask(with: request as URLRequest)  { (data, response, error) in
+            do {
+                if let jsonData = data {
+                    if let jsonDataDict  = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject] {
+                        NSLog("Received data:\n\(jsonDataDict))")
+                    }
+                }
+            } catch let err as NSError {
+                print(err.debugDescription)
+            }
+        }
+        task.resume()*/
+        
         var request = URLRequest(url: URL(string: "https://fcm.googleapis.com/fcm/send")!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("key=AIzaSyBuRqme9gqOsgBkZf1gmiT_-iy3uPlZekQ", forHTTPHeaderField: "Authorization")
+        request.setValue("key=AAAA_QjVv44:APA91bEpd8HIWReOMvyPT_vtT-hPB4P6nHJqjNmnAKGL-ZTDEH0L9ptEUQ8bVQzllbAhQiiaHQ3_EFdoCqO1xbdxP1v5TNXG2_qtvgMwwZ8n-vAHPJWIv__PI7PPUO8AjNoQremscAma", forHTTPHeaderField: "Authorization")
         let json = [
             "to" : reciever_ftoken! as String,
             "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
@@ -783,6 +822,7 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         catch {
             print(error)
         }
+        
     }
     
 }

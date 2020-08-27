@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
+//        let pushManager = PushNotificationManager()
+//        pushManager.registerForPushNotifications()
         registerForAPNS(application: application)
 //        if LoginSession.isActive(){
 //            setRootController()
@@ -165,7 +167,7 @@ extension AppDelegate : MessagingDelegate {
   // [START refresh_token]
   func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
     print("Firebase registration token: \(fcmToken)")
-    
+
     let dataDict:[String: String] = ["token": fcmToken]
     NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
     // TODO: If necessary send token to application server.

@@ -45,6 +45,7 @@
 		4474D31824638DD2002A9B6B /* AddQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474D31724638DD2002A9B6B /* AddQuestionVC.swift */; };
 		4474D31A24638E1C002A9B6B /* ForumAnswerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474D31924638E1C002A9B6B /* ForumAnswerListVC.swift */; };
 		5C098B0A24E63B6F0075BB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C098B0924E63B6F0075BB3D /* GoogleService-Info.plist */; };
+		5C96259424F300FE00EEA96D /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96259324F300FE00EEA96D /* PushNotificationManager.swift */; };
 		82611C0A24BD960500755976 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0924BD960500755976 /* CustomAlert.swift */; };
 		82611C0C24BD978100755976 /* LogoutAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0B24BD978100755976 /* LogoutAlertVC.swift */; };
 		82611C0E24BD9D5600755976 /* FireBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0D24BD9D5600755976 /* FireBaseHandler.swift */; };
@@ -98,6 +99,8 @@
 		4474D31924638E1C002A9B6B /* ForumAnswerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumAnswerListVC.swift; sourceTree = "<group>"; };
 		58EC1431FF78CCCF171E72B5 /* Pods-GoFeds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoFeds.debug.xcconfig"; path = "Target Support Files/Pods-GoFeds/Pods-GoFeds.debug.xcconfig"; sourceTree = "<group>"; };
 		5C098B0924E63B6F0075BB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C96259324F300FE00EEA96D /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		5CF2FFD524F026E4007EC846 /* GoFeds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoFeds.entitlements; sourceTree = "<group>"; };
 		82611C0924BD960500755976 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		82611C0B24BD978100755976 /* LogoutAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertVC.swift; sourceTree = "<group>"; };
 		82611C0D24BD9D5600755976 /* FireBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseHandler.swift; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		0DD726662449AB4900B74DFE /* GoFeds */ = {
 			isa = PBXGroup;
 			children = (
+				5CF2FFD524F026E4007EC846 /* GoFeds.entitlements */,
 				5C098B0924E63B6F0075BB3D /* GoogleService-Info.plist */,
 				826190F624B49ED10032FA1C /* Modals */,
 				0DD726672449AB4900B74DFE /* AppDelegate.swift */,
@@ -258,6 +262,7 @@
 		826190F724B49EDA0032FA1C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				5C96259324F300FE00EEA96D /* PushNotificationManager.swift */,
 				82611C0D24BD9D5600755976 /* FireBaseHandler.swift */,
 				826190FC24B4E7700032FA1C /* Conversation.swift */,
 				826190FD24B4E7740032FA1C /* ConversationHandler.swift */,
@@ -392,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C96259424F300FE00EEA96D /* PushNotificationManager.swift in Sources */,
 				443EC9F4247021B6007EC0C2 /* CurrentUserInfo.swift in Sources */,
 				443EC9ED246FFAB3007EC0C2 /* ChatVC.swift in Sources */,
 				261BDCD42490195300D94B8E /* IBView.swift in Sources */,
@@ -508,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -562,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -577,6 +583,7 @@
 			baseConfigurationReference = 58EC1431FF78CCCF171E72B5 /* Pods-GoFeds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
@@ -600,6 +607,7 @@
 			baseConfigurationReference = 008779FDF05EACF8D9797312 /* Pods-GoFeds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;

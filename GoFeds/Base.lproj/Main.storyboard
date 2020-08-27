@@ -1018,7 +1018,7 @@ Last Updated: 07/2020
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl8-fy-8Sl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-eO-1b3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
@@ -1035,9 +1035,9 @@ Last Updated: 07/2020
                                                     <constraint firstAttribute="height" constant="35" id="mge-II-NIP"/>
                                                     <constraint firstAttribute="width" constant="35" id="st2-wS-Wbi"/>
                                                 </constraints>
-                                                <state key="normal" image="save"/>
+                                                <state key="normal" image="logout"/>
                                                 <connections>
-                                                    <action selector="onClickSaveBtn:" destination="3nB-9m-VyV" eventType="touchUpInside" id="r2T-b9-zSY"/>
+                                                    <action selector="logoutBtnAvction:" destination="3nB-9m-VyV" eventType="touchUpInside" id="hzc-Xz-5XC"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idy-zv-rq4">
@@ -1228,7 +1228,7 @@ Last Updated: 07/2020
                                                     <constraint firstAttribute="height" constant="40" id="UJY-d9-knd"/>
                                                     <constraint firstAttribute="width" constant="80" id="ZZW-fo-XFA"/>
                                                 </constraints>
-                                                <state key="normal" title="Logout">
+                                                <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1243,7 +1243,7 @@ Last Updated: 07/2020
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="logoutBtnAvction:" destination="3nB-9m-VyV" eventType="touchUpInside" id="JGh-81-CpQ"/>
+                                                    <action selector="onClickSaveBtn:" destination="3nB-9m-VyV" eventType="touchUpInside" id="Ahy-EN-x8K"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1371,9 +1371,9 @@ Last Updated: 07/2020
                         <outlet property="agencyTextFld" destination="FzL-kJ-KF0" id="qz8-ce-aoB"/>
                         <outlet property="currentPortTxtFld" destination="hf7-wN-r5z" id="SBL-hy-lKj"/>
                         <outlet property="desiredTextFld" destination="kEN-q4-hNh" id="1Df-zC-WIk"/>
-                        <outlet property="logoutBtn" destination="zh0-ds-SCK" id="cCe-Y1-0Gt"/>
                         <outlet property="officeTextfld" destination="fNC-31-L4h" id="5JU-3T-Sbv"/>
                         <outlet property="rankTextFld" destination="ysZ-Xr-OQN" id="CMy-5U-f3G"/>
+                        <outlet property="saveBtn" destination="zh0-ds-SCK" id="9J5-1t-f7N"/>
                         <outlet property="userImage" destination="aHc-gM-9cH" id="COA-VM-p8U"/>
                         <outlet property="userName" destination="jcb-IM-Pwi" id="dEK-dQ-jUv"/>
                     </connections>
@@ -3575,7 +3575,6 @@ Last Updated: 07/2020
         <image name="passwrd" width="75" height="75"/>
         <image name="privacypolicy" width="37" height="37"/>
         <image name="right" width="24" height="24"/>
-        <image name="save" width="800" height="800"/>
         <image name="security" width="37" height="37"/>
         <image name="setting" width="24" height="24"/>
         <image name="settings" width="621" height="1344"/>

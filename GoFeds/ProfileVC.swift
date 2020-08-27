@@ -20,7 +20,7 @@ class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var officeTextfld: UITextField!
     @IBOutlet weak var currentPortTxtFld: UITextField!
     @IBOutlet weak var desiredTextFld: UITextField!
-    @IBOutlet weak var logoutBtn: GradientButton!
+    @IBOutlet weak var saveBtn: GradientButton!
     
     //MARK:- Variables
     var rankPicker  = UIPickerView()

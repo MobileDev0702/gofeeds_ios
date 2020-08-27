@@ -49,6 +49,8 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let Officies = ["OFO","BP"]
     let currPort = "AZ San Ysidrdo"
     
+    var ftoken: String!
+    
     //MARK:- ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,12 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
              object: nil)
 //        currentPortTextFld.text = currPort
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)
+    }
+    
+    @objc func getToken(_ notification: Notification) {
+        let dict = notification.userInfo as! [String:String]
+        ftoken = dict["token"]!
     }
     
     override func viewWillAppear(_ animated: Bool) {
