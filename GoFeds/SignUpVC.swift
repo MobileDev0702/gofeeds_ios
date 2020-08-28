@@ -334,7 +334,7 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                       "current_port":"\(currentPortTextFld.text!)",
                       "desire_port":"\(desiredPortTextfld.text!)",
                       "office":officeTextfld.text!,
-                      "ftoken":uid,
+                      "ftoken":ftoken!,
                       "device_id":"test"] as [String : Any]
                    
                    Utility.showActivityIndicator()

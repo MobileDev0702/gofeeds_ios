@@ -52,9 +52,9 @@ class NewsFeedVC: UIViewController {
               let value = response.result.value as! [String:Any]?
              // let BoolValue = value?["success"] as! Bool
               
-            print(value)
+//            print(value)
             self.listArray = value!["articles"] as! NSArray
-            print(self.listArray)
+//            print(self.listArray)
             Utility.hideActivityIndicator()
             self.tblNewsFeed.reloadData()
 //              if(BoolValue == true) {

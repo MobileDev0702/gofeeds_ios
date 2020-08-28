@@ -62,7 +62,7 @@ class LoginVC: UIViewController {
         
         weak var weakSelf = self
         
-        let validEmailAddressValidationResult = isValidEmailAddress(emailAddressString: emailAddressText.text ?? "")
+//        let validEmailAddressValidationResult = isValidEmailAddress(emailAddressString: emailAddressText.text ?? "")
         //        if (validEmailAddressValidationResult == false)  {
         //            let okAction: AlertButtonWithAction = (.ok, nil)
         //            self.showAlertWith(message: .custom("Enter the valid Email address")!, actions: okAction)
@@ -76,7 +76,7 @@ class LoginVC: UIViewController {
         }else {
             Utility.showActivityIndicator()
             let url = loginUrl
-            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "device_id":"asdfasd"]).responseJSON { response in
+            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "ftoken":ftoken!, "device_id":"asdfasd"]).responseJSON { response in
                 
                 DispatchQueue.main.async {
                     

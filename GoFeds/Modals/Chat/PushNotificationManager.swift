@@ -10,10 +10,12 @@ import UIKit
 import FirebaseDatabase
 import FirebaseMessaging
 import UserNotifications
+import Alamofire
 
 class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCenterDelegate {
-    
+//    let userID: String
     override init() {
+//        self.userID = userID
         super.init()
     }
     func registerForPushNotifications() {
@@ -35,9 +37,15 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
         updateFirestorePushTokenIfNeeded()
     }
     func updateFirestorePushTokenIfNeeded() {
-//        if let token = Messaging.messaging().fcmToken {
-//            Database.database().reference().child("user").child(userID).updateChildValues(["fcmToken": token])
-//        }
+        if LoginSession.isActive() {
+            let dataDict:[String: String] = ["token": LoginSession.getValueOf(key: SessionKeys.fToken)]
+            NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        } else {
+            if let token = Messaging.messaging().fcmToken {
+                let dataDict:[String: String] = ["token": token]
+                NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+            }
+        }
     }
     
     func application(application: UIApplication,
@@ -48,6 +56,7 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         updateFirestorePushTokenIfNeeded()
     }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }

@@ -17,6 +17,8 @@ let loginUrl = baseUrl + "login.php"
 let MyProfileUrl = baseUrl + "view_profile.php"
 let UpdateProfileUrl = baseUrl + "update_profile.php"
 let UpdateVote = baseUrl + "update_vote.php"
+let UpdateFToken = baseUrl + "update_ftoken.php"
+let UpdateBadge = baseUrl + "update_badge.php"
 
 
 let AddFAQUrl = baseUrl + "add_faq_question.php"

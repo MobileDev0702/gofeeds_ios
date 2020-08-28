@@ -757,72 +757,55 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
     
     func sendPush(txt:String,senderId:String,msgDate:String)
     {
-        //old: AAAAILl1l18:APA91bGJp3x2-Cjlh0rEGoduuVryFtt1eokyutTSd2E9xVgM8orXIAOmf_YanCSzQX7zIuqtDbprEGeuBhTmuSr6dqu-ec0p_j06WkiWgtydDJK6obuR-im2QZ3W5om8xhs9cxG-lKNk
-        // print(self.postId)
-        //        let defaultValue = UserDefaults.standard
-        /*
-        let urlString = "https://fcm.googleapis.com/fcm/send"
-        let url = NSURL(string: urlString)!
-        let paramString: [String : Any] = ["to" : token,
-                                           "notification" : ["title" : title, "body" : body],
-                                           "data" : ["user" : "test_id", "friendId" : friendId, "friendName" : friendName, "friendCode" : friendCode, "roomId" : roomId]
-        ]
-        let request = NSMutableURLRequest(url: url as URL)
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject:paramString, options: [.prettyPrinted])
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("key=AAAA0B_rvjs:APA91bFMWZzd6iVyt4IEpL3HG2FyBtY46AfWivexdTb7PyP5kqRYLwOrZc0sP-sAEF419nG5Vmm97TnnmWol_2j12w47m25W0XgHMNWbf9dnFgAYuwc4BNA16e3gO2lyKjHVYX4d5o_AVMmsCY6MTD-IOQ0RUMfg8w", forHTTPHeaderField: "Authorization")
-        let task =  URLSession.shared.dataTask(with: request as URLRequest)  { (data, response, error) in
-            do {
-                if let jsonData = data {
-                    if let jsonDataDict  = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject] {
-                        NSLog("Received data:\n\(jsonDataDict))")
+        let url = UpdateBadge
+        
+        Alamofire.request(url,  method: .post, parameters: ["id": recieverUID!, "reset": false]).responseJSON { response in
+            let value = response.result.value as! [String:Any]?
+            let BoolValue = value?["success"] as! Bool
+            if(BoolValue == true) {
+                let badgeCount = value?["badgeCount"] as! Int
+                var request = URLRequest(url: URL(string: "https://fcm.googleapis.com/fcm/send")!)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue("key=AAAA_QjVv44:APA91bEpd8HIWReOMvyPT_vtT-hPB4P6nHJqjNmnAKGL-ZTDEH0L9ptEUQ8bVQzllbAhQiiaHQ3_EFdoCqO1xbdxP1v5TNXG2_qtvgMwwZ8n-vAHPJWIv__PI7PPUO8AjNoQremscAma", forHTTPHeaderField: "Authorization")
+                let json = [
+                    "to" : self.reciever_ftoken! as String,
+                    "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
+                    "notification" : [
+                        "body":"You Have a New Message","badge":badgeCount, "mSender_id":senderId,"sound": "default"
+                    ],"data" : [
+                        "message" : txt,"mSender_id":senderId,"mReciver_id":self.reciever_ftoken,"date":msgDate,"mPost_id":self.currentUserFToken,
+                    ]
+                    ] as [String : Any]
+                
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                    request.httpBody = jsonData
+                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                        guard let data = data, error == nil else {
+                            print("Error=\(String(describing: error?.localizedDescription))")
+                            return
+                        }
+                        
+                        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                            // check for http errors
+                            print("Status Code should be 200, but is \(httpStatus.statusCode)")
+                            print("Response = \(String(describing: response))")
+                        }
+                        
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("responseString = \(String(describing: responseString))")
                     }
+                    task.resume()
                 }
-            } catch let err as NSError {
-                print(err.debugDescription)
+                catch {
+                    print(error)
+                }
+            }else {
+                let okAction: AlertButtonWithAction = (.ok, nil)
+                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
             }
         }
-        task.resume()*/
-        
-        var request = URLRequest(url: URL(string: "https://fcm.googleapis.com/fcm/send")!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("key=AAAA_QjVv44:APA91bEpd8HIWReOMvyPT_vtT-hPB4P6nHJqjNmnAKGL-ZTDEH0L9ptEUQ8bVQzllbAhQiiaHQ3_EFdoCqO1xbdxP1v5TNXG2_qtvgMwwZ8n-vAHPJWIv__PI7PPUO8AjNoQremscAma", forHTTPHeaderField: "Authorization")
-        let json = [
-            "to" : reciever_ftoken! as String,
-            "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
-            "notification" : [
-                "body":"You Have a New Message","mSender_id":senderId,"sound": "default"
-            ],"data" : [
-                "message" : txt,"mSender_id":senderId,"mReciver_id":reciever_ftoken,"date":msgDate,"mPost_id":currentUserFToken,
-            ]
-            ] as [String : Any]
-        
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-            request.httpBody = jsonData
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    print("Error=\(String(describing: error?.localizedDescription))")
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    // check for http errors
-                    print("Status Code should be 200, but is \(httpStatus.statusCode)")
-                    print("Response = \(String(describing: response))")
-                }
-                
-                let responseString = String(data: data, encoding: .utf8)
-                print("responseString = \(String(describing: responseString))")
-            }
-            task.resume()
-        }
-        catch {
-            print(error)
-        }
-        
     }
     
 }
