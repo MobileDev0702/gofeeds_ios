@@ -74,11 +74,11 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         
         let url = MyProfileUrl
         
-        Alamofire.request(url,  method: .post, parameters: ["user_id": recieverUID]).responseJSON { response in
+        Alamofire.request(url,  method: .post, parameters: ["user_id": recieverUID!]).responseJSON { response in
             let value = response.result.value as! [String:Any]?
             let BoolValue = value?["success"] as! Bool
             if(BoolValue == true) {
-                self.reciever_ftoken = value?["gf_ftoken"] as! String
+                self.reciever_ftoken = value?["ftoken"] as? String
             }else {
                 let okAction: AlertButtonWithAction = (.ok, nil)
                 self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)

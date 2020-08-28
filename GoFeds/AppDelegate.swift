@@ -105,7 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let value = response.result.value as! [String:Any]?
                 let BoolValue = value?["success"] as! Bool
                 if(BoolValue == true) {
-
+                    let badgeCount = value?["badgeCount"] as! String
+                    UserDefaults.standard.set(badgeCount, forKey: "BadgeCount")
                 }
             }
         }

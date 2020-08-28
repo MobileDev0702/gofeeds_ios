@@ -30,17 +30,11 @@ class LoginVC: UIViewController {
         
         emailAddressText.text = ""//"kamal@gmail.com"
         psswrdTextfld.text = ""//"123456"
+        ftoken = UserDefaults.standard.string(forKey: "FCMToken")
         
         if LoginSession.isActive(){
             self.navigateToHome()
         }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)
-    }
-    
-    @objc func getToken(_ notification: Notification) {
-        let dict = notification.userInfo as! [String:String]
-        ftoken = dict["token"]!
     }
     
     override func viewWillAppear(_ animated: Bool) {

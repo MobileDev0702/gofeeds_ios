@@ -18,6 +18,7 @@ class ConnectionVC: UIViewController {
     @IBOutlet weak var exactVW: UIView!
     @IBOutlet weak var exactMAtchBtn: UIButton!
     @IBOutlet weak var possibleMatchBtn: UIButton!
+    @IBOutlet weak var notificationCount: UILabel!
     
     //MARK:- Variables
     var exactUserArray = NSArray()
@@ -34,6 +35,18 @@ class ConnectionVC: UIViewController {
         
         possibleVW.isHidden = true
         possibleMatchBtn.setTitleColor(UIColor.lightGray, for: .normal)
+        
+        notificationCount.layer.cornerRadius = notificationCount.frame.size.height / 2
+        notificationCount.clipsToBounds = true
+        
+        let badgeCount = UserDefaults.standard.string(forKey: "BadgeCount")
+        if badgeCount == "0" {
+            notificationCount.isHidden = true
+        } else {
+            notificationCount.isHidden = false
+            notificationCount.text = badgeCount
+        }
+        
         getExactMatchesList()
     }
     
@@ -127,6 +140,7 @@ class ConnectionVC: UIViewController {
 //        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC
 //               self.navigationController?.isNavigationBarHidden = true
 //               self.navigationController?.pushViewController(vc!, animated: true)
+        notificationCount.isHidden = true
         self.performSegue(withIdentifier: "ConnectionToChatVC", sender: nil)
     }
     

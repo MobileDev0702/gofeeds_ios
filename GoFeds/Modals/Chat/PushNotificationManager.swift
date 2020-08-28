@@ -38,12 +38,14 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
     }
     func updateFirestorePushTokenIfNeeded() {
         if LoginSession.isActive() {
-            let dataDict:[String: String] = ["token": LoginSession.getValueOf(key: SessionKeys.fToken)]
-            NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+//            let dataDict:[String: String] = ["token": LoginSession.getValueOf(key: SessionKeys.fToken)]
+//            NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+            UserDefaults.standard.set(LoginSession.getValueOf(key: SessionKeys.fToken), forKey: "FCMToken")
         } else {
             if let token = Messaging.messaging().fcmToken {
-                let dataDict:[String: String] = ["token": token]
-                NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+//                let dataDict:[String: String] = ["token": token]
+//                NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+                UserDefaults.standard.set(token, forKey: "FCMToken")
             }
         }
     }

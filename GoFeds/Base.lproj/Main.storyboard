@@ -1018,7 +1018,7 @@ Last Updated: 07/2020
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl8-fy-8Sl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-eO-1b3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
@@ -2557,10 +2557,22 @@ Last Updated: 07/2020
                                     <action selector="chatBtn:" destination="mXg-cf-bym" eventType="touchUpInside" id="34I-T3-PXe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2P-HR-ntM">
+                                <rect key="frame" x="379" y="69" width="15" height="15"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="fcU-E2-nNv"/>
+                                    <constraint firstAttribute="height" constant="15" id="ph3-VT-yGC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vbA-kX-SPT" firstAttribute="top" secondItem="Naa-e1-f7J" secondAttribute="bottom" constant="30" id="CBw-1t-f7h"/>
+                            <constraint firstItem="U2P-HR-ntM" firstAttribute="top" secondItem="IlI-ad-kti" secondAttribute="top" id="ClP-HU-Q9e"/>
                             <constraint firstItem="wE7-sv-hBm" firstAttribute="bottom" secondItem="vbA-kX-SPT" secondAttribute="bottom" id="Hy7-Qk-cMk"/>
                             <constraint firstItem="Naa-e1-f7J" firstAttribute="top" secondItem="IlI-ad-kti" secondAttribute="bottom" constant="30" id="ICx-IE-q5U"/>
                             <constraint firstItem="Naa-e1-f7J" firstAttribute="trailing" secondItem="wE7-sv-hBm" secondAttribute="trailing" id="KSV-cN-DZN"/>
@@ -2570,6 +2582,7 @@ Last Updated: 07/2020
                             <constraint firstItem="Naa-e1-f7J" firstAttribute="leading" secondItem="wE7-sv-hBm" secondAttribute="leading" id="VeG-ix-fdW"/>
                             <constraint firstItem="mFU-lq-2vN" firstAttribute="leading" secondItem="wE7-sv-hBm" secondAttribute="leading" id="aSz-P6-eoH"/>
                             <constraint firstItem="wE7-sv-hBm" firstAttribute="trailing" secondItem="vbA-kX-SPT" secondAttribute="trailing" id="ePa-fz-a3N"/>
+                            <constraint firstItem="U2P-HR-ntM" firstAttribute="trailing" secondItem="IlI-ad-kti" secondAttribute="trailing" id="esw-ui-NeY"/>
                             <constraint firstItem="vbA-kX-SPT" firstAttribute="leading" secondItem="wE7-sv-hBm" secondAttribute="leading" id="v9T-bL-LLk"/>
                             <constraint firstItem="vbA-kX-SPT" firstAttribute="top" secondItem="mFU-lq-2vN" secondAttribute="bottom" id="xsy-A8-Dd7"/>
                         </constraints>
@@ -2580,6 +2593,7 @@ Last Updated: 07/2020
                         <outlet property="connectTable" destination="vbA-kX-SPT" id="Q34-b7-5Fk"/>
                         <outlet property="exactMAtchBtn" destination="1e3-qw-yAc" id="ajc-Wr-FMh"/>
                         <outlet property="exactVW" destination="Pe7-9T-5Fr" id="u6G-ZY-Xq7"/>
+                        <outlet property="notificationCount" destination="U2P-HR-ntM" id="8Pw-7g-M3H"/>
                         <outlet property="possibleMatchBtn" destination="iNS-gv-OEb" id="iKI-bn-pWW"/>
                         <outlet property="possibleVW" destination="4t9-cV-UzM" id="ib9-Wo-PE8"/>
                         <segue destination="65Y-Rf-awE" kind="show" identifier="ConnectionToChatVC" id="K2i-o8-Evu"/>
@@ -2792,7 +2806,7 @@ Last Updated: 07/2020
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upu-Q1-HkX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-tf-Pa6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
