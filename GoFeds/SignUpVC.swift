@@ -2,9 +2,6 @@
 //  SignUpVC.swift
 //  GoFeds
 //
-//  Created by Novos on 17/04/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -58,15 +55,16 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
              selector: #selector(updateDesiredPort),
              name: .updateDesiredPorts,
              object: nil)
+        ftoken = UserDefaults.standard.string(forKey: "FCMToken")
 //        currentPortTextFld.text = currPort
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)
     }
     
-    @objc func getToken(_ notification: Notification) {
-        let dict = notification.userInfo as! [String:String]
-        ftoken = dict["token"]!
-    }
+//    @objc func getToken(_ notification: Notification) {
+//        let dict = notification.userInfo as! [String:String]
+//        ftoken = dict["token"]!
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -189,8 +187,8 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         }else {
             
             //FireBase
-//            termsView.isHidden = false
-            handleFirebaseRegistration()
+            termsView.isHidden = false
+//            handleFirebaseRegistration()
         }
     }
     
@@ -277,8 +275,8 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     @IBAction func onClickCloseBtn(_ sender: UIButton) {
 
-//        handleFirebaseRegistration()
-        termsView.isHidden = true
+        handleFirebaseRegistration()
+//        termsView.isHidden = true
     }
     
     //MARK:- Handle irebase Registration

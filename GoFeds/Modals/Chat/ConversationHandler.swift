@@ -2,9 +2,6 @@
 //  ConversationHandler.swift
 //  CSS POS
 //
-//  Created by intersoft-admin on 08/10/18.
-//  Copyright © 2018 intersoft-kansal. All rights reserved.
-//
 
 import Foundation
 import Firebase

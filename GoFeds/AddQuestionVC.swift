@@ -2,9 +2,6 @@
 //  AddQuestionVC.swift
 //  GoFeds
 //
-//  Created by Tarun Sachdeva on 07/05/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import Alamofire

@@ -2,9 +2,6 @@
 //  FireBaseHandler.swift
 //  POS-Native
 //
-//  Created by intersoft-kansal on 02/12/17.
-//  Copyright © 2017 intersoft-kansal. All rights reserved.
-//
 
 import Foundation
 import FirebaseCore

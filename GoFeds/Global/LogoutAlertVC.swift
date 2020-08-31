@@ -2,9 +2,6 @@
 //  LogoutAlertVC.swift
 //  POS-Native
 //
-//  Created by intersoft-admin on 08/03/18.
-//  Copyright © 2018 intersoft-kansal. All rights reserved.
-//
 
 import Foundation
 import UIKit

@@ -2,9 +2,6 @@
 //  ChatLogController.swift
 //  GoFeds
 //
-//  Created by Inderveer Singh on 08/06/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -62,14 +59,21 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         navigationItem.title = recieverName!
         collectionView.backgroundColor = .white
         //setupInputComponents()
+        
         self.setupKeyboardObserver()
         
-        collectionView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        collectionView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 66, right: 0)
         //collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         collectionView.register(chatMessageCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.alwaysBounceVertical = true
         collectionView.keyboardDismissMode = .interactive
         print(userChat_text)
+        
+        print("\(collectionView.frame.height) \(collectionView.frame.origin.x) \(collectionView.frame.origin.y)")
         //print(reciever_ftoken!)
         
         let url = MyProfileUrl
@@ -100,6 +104,12 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         NotificationCenter.default.addObserver(self, selector: #selector(singleMessagesLoaded(_:)), name: NSNotification.Name(rawValue: LocalNotificationKeys.singleMessagesFetched), object: nil)
         
         self.addLongPressGstrOnTblVw()
+    }
+    
+    @objc func dismissKeyboard() {
+        
+//        self.view.endEditing(true)
+        self.inputTextField.resignFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -200,17 +210,19 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         guard let userInfo = (notification as Notification).userInfo, let _ = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         let keyboardDuration = (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
-        print(containerViewBottomAnchor?.constant)
-        print(keyboardFrame!.height)
         containerViewBottomAnchor?.constant = -keyboardFrame!.height
         UIView.animate(withDuration: keyboardDuration!) {
             self.view.layoutIfNeeded()
         }
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         {
+            print("height \(collectionView.frame.height)")
             print("Keyborad size \(keyboardSize.height)")
             //self.containerViewBottomAnchor!.constant = keyboardSize.height
             // self.sendButtonButtom.constant = keyboardSize.height
+            collectionView.frame.size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height - keyboardSize.height + 50)
+            self.collectionView.scrollToItem(at: IndexPath(item:self.messages.count-1, section: 0), at: .top, animated: true)
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -226,6 +238,16 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         }
         containerViewBottomAnchor?.constant = newHeight
         UIView.animate(withDuration: keyboardDuration!) {
+            self.view.layoutIfNeeded()
+        }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        {
+            print("height \(collectionView.frame.height)")
+            print("Keyborad size \(keyboardSize.height)")
+            //self.containerViewBottomAnchor!.constant = keyboardSize.height
+            // self.sendButtonButtom.constant = keyboardSize.height
+            collectionView.frame.size = CGSize(width: collectionView.frame.width, height: (collectionView.frame.height + keyboardSize.height - 50))
+            self.collectionView.scrollToItem(at: IndexPath(item:self.messages.count-1, section: 0), at: .top, animated: true)
             self.view.layoutIfNeeded()
         }
     }
@@ -321,7 +343,7 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         let senderId = messages[indexPath.row].message?.userId
         let currentUserId = LoginSession.currentUserId
         
-        cell.bubbleWidthAnchor?.constant = estimateFrameForText(text: messageText ?? "").width + 32
+        cell.bubbleWidthAnchor?.constant = estimateFrameForText(text: messageText).width + 32
         
         cell.textView.text = messageText//message.text
         
@@ -488,6 +510,10 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
                     self.collectionView.reloadData()
                 }
 //                self.inputTextField.text = nil
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         
     }
     

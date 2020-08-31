@@ -73,7 +73,7 @@
 		0DA28F05244EE11D0081020A /* AlertControllerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerHandler.swift; sourceTree = "<group>"; };
 		0DA28F08244EFD030081020A /* ConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
 		0DAEDAE924502313009A2C27 /* NewsFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
-		0DD726642449AB4900B74DFE /* GoFeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DD726642449AB4900B74DFE /* FedsConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FedsConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD726672449AB4900B74DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD726692449AB4900B74DFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0DD7266E2449AB4900B74DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		0DD726652449AB4900B74DFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DD726642449AB4900B74DFE /* GoFeds.app */,
+				0DD726642449AB4900B74DFE /* FedsConnect.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 			);
 			name = GoFeds;
 			productName = GoFeds;
-			productReference = 0DD726642449AB4900B74DFE /* GoFeds.app */;
+			productReference = 0DD726642449AB4900B74DFE /* FedsConnect.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -584,7 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D7D3UF7ETZ;
@@ -595,8 +595,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stackrage.gofeds;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GoFedsDev;
+				PRODUCT_NAME = FedsConnect;
+				PROVISIONING_PROFILE_SPECIFIER = GoFedsDist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -608,7 +608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D7D3UF7ETZ;
@@ -619,8 +619,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stackrage.gofeds;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GoFedsDev;
+				PRODUCT_NAME = FedsConnect;
+				PROVISIONING_PROFILE_SPECIFIER = GoFedsDist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

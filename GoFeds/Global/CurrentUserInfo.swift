@@ -2,9 +2,6 @@
 //  CurrentUserInfo.swift
 //  PlutoGo
 //
-//  Created by Tarun Sachdeva on 01/06/18.
-//  Copyright © 2018 Tsss. All rights reserved.
-//
 
 import Foundation
 

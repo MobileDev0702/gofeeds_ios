@@ -2,9 +2,6 @@
 //  multiSelectionPopUpVC.swift
 //  GoFeds
 //
-//  Created by Inderveer Singh on 31/05/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 

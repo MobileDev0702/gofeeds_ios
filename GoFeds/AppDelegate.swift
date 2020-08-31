@@ -2,9 +2,6 @@
 //  AppDelegate.swift
 //  GoFeds
 //
-//  Created by Novos on 17/04/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import IQKeyboardManagerSwift
@@ -24,6 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let pushManager = PushNotificationManager()
         pushManager.registerForPushNotifications()
+        
+        application.applicationIconBadgeNumber = 0
+        if LoginSession.isActive() {
+            let url = UpdateBadge
+
+            Alamofire.request(url,  method: .post, parameters: ["id": LoginSession.currentUserId, "reset": true]).responseJSON { response in
+                let value = response.result.value as! [String:Any]?
+                let BoolValue = value?["success"] as! Bool
+                if(BoolValue == true) {
+                    let badgeCount = value?["badgeCount"] as! String
+                    UserDefaults.standard.set(badgeCount, forKey: "BadgeCount")
+                }
+            }
+        } else {
+            UserDefaults.standard.set("0", forKey: "BadgeCount")
+        }
         
         return true
     }
@@ -109,6 +122,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UserDefaults.standard.set(badgeCount, forKey: "BadgeCount")
                 }
             }
+        } else {
+            UserDefaults.standard.set("0", forKey: "BadgeCount")
         }
     }
 

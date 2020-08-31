@@ -2,9 +2,6 @@
 //  chatMessageCell.swift
 //  GoFeds
 //
-//  Created by Inderveer Singh on 09/06/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 
@@ -26,7 +23,7 @@ class chatMessageCell: UICollectionViewCell {
         tv.textColor = .white
         tv.backgroundColor = .clear
         tv.translatesAutoresizingMaskIntoConstraints = false
-        
+        tv.numberOfLines = 100
         return tv
     }()
     

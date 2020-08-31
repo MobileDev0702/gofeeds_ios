@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bpg-dF-qP7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bpg-dF-qP7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -481,94 +481,94 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jzB-hh-KDa">
                                         <rect key="frame" x="12" y="60" width="390" height="758"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <string key="text">TERMS AND CONDITIONS
+                                        <mutableString key="text">TERMS AND CONDITIONS
 
 1. OVERVIEW:
-WELCOME TO GoFeds APP. WE PROVIDE CHAT AND NEWS FED PLATFORM. OUR SERVICES DON’T SUBSTITUTE FOR THE PROFESSIONAL NEWS AGENCIES. PLEASE READ THESE TERMS OF USE (“TERMS”) CAREFULLY BEFORE USING THIS APP OR SERVICES MADE AVAILABLE THROUGH THIS APP. YOUR USE OF THE SERVICES IS GOVERNED BY THESE TERMS WHICH CONSTITUTE A BINDING LEGAL AGREEMENT BETWEEN YOU AND GoFeds. BY CREATING YOUR USER ACCOUNT AND USING OUR SERVICES, YOU ACKNOWLEDGE AND REPRESENT THAT YOU HAVE READ AND AGREED TO THESE TERMS. 
+WELCOME TO FedsConnect APP. WE PROVIDE CHAT AND NEWS FED PLATFORM. OUR SERVICES DON’T SUBSTITUTE FOR THE PROFESSIONAL NEWS AGENCIES. PLEASE READ THESE TERMS OF USE (“TERMS”) CAREFULLY BEFORE USING THIS APP OR SERVICES MADE AVAILABLE THROUGH THIS APP. YOUR USE OF THE SERVICES IS GOVERNED BY THESE TERMS WHICH CONSTITUTE A BINDING LEGAL AGREEMENT BETWEEN YOU AND FedsConnect. BY CREATING YOUR USER ACCOUNT AND USING OUR SERVICES, YOU ACKNOWLEDGE AND REPRESENT THAT YOU HAVE READ AND AGREED TO THESE TERMS. 
 2. DEFINITIONS:
 i.	“Applicable laws” refer to the laws of the State of California and Federal laws of the USA.
-ii.	“GoFeds Parties” include GoFeds, its owners, directors, employees, agents, service providers, assigns, or contractors.
-iii.	“Services” include GoFeds Application, User Account, technology, products, applications, tools, design, content, audio, video, text and images made available to you.	
+ii.	“FedsConnect Parties” include FedsConnect, its owners, directors, employees, agents, service providers, assigns, or contractors.
+iii.	“Services” include FedsConnect Application, User Account, technology, products, applications, tools, design, content, audio, video, text and images made available to you.	
 iv.	“User Information” refers to the data, information, statements, or Registration Information submitted by the User.
 v.	“Registration Information” includes the information provided by the User at the time of creating a User Account including username and email address of User.
-vi.	“User Account” means the software based user account created by the User on GoFeds for the use of the Services.
+vi.	“User Account” means the software based user account created by the User on FedsConnect for the use of the Services.
 vii.	“Third Party Provider(s)” refers to the licensor(s), service provider(s) and software owner(s) or such other business entities whose services, programs and software form part of the Services.
-viii.	“User Agreement” includes Terms, Privacy Policy or, other policies, manual or representation provided on GoFeds.
-ix.	“We”, “our”, “us” “GoFeds” and “its” refer to GoFeds’s owners, director(s) and employee(s).
-x.	“You”, “your”, or “User” refer to the users of GoFeds and Services. 
-xvi. “User Content” refers to any content, image, statements, review, query or feedback posted, submitted and communicated by the User to GoFeds.
+viii.	“User Agreement” includes Terms, Privacy Policy or, other policies, manual or representation provided on FedsConnect.
+ix.	“We”, “our”, “us” “FedsConnect” and “its” refer to FedsConnect’s owners, director(s) and employee(s).
+x.	“You”, “your”, or “User” refer to the users of FedsConnect and Services. 
+xvi. “User Content” refers to any content, image, statements, review, query or feedback posted, submitted and communicated by the User to FedsConnect.
 3. ELIGIBILITY
-You can use GoFeds and Services only if you have the following qualifications:
+You can use FedsConnect and Services only if you have the following qualifications:
 i.	You are at least sixteen (16) years old;
 ii.	You are not resident of the country restricted or embargoed by the USA;
 iii.	You have the knowledge of potential harms to which you may expose as a result of using our Services and assume all risk of such harms; and
 iv.	You agree to comply with the Terms and the applicable laws.
 4. SERVICE
- The Services are freemium services and are without any price and may be subject to certain terms and conditions that we may change from time to time. GoFeds allows you to view or read news content originated from third party providers. GoFeds provides forum section where you can post and share your User Content and view, comment and use the User Content of other Users. Using GoFeds chat feature, you can chat with other Users. You are responsible to ensure that your User Content, User-to-User communication and user behavior don’t violate these Terms and/or any applicable laws. Our Services are not funded by any State or Federal Government or agency. 
+ The Services are freemium services and are without any price and may be subject to certain terms and conditions that we may change from time to time. FedsConnect allows you to view or read news content originated from third party providers. FedsConnect provides forum section where you can post and share your User Content and view, comment and use the User Content of other Users. Using FedsConnect chat feature, you can chat with other Users. You are responsible to ensure that your User Content, User-to-User communication and user behavior don’t violate these Terms and/or any applicable laws. Our Services are not funded by any State or Federal Government or agency. 
 5. USER ACCOUNT AND CONTENT: 
-User Account. You must have a GoFeds User Account for the use of GoFeds which you can create by providing us with the Registration Information. All Services or your online activities on GoFeds are tracked under your User Account.
-In no case shall you allow any person to access and use your User Account. In addition, you shall not transfer, sell, lease, sublet or assign your User Account to any other person/entity. You acknowledge that you are solely responsible for the use of your User Account. You must take care of the security of your User Account login information. You must not include in the username your real name, official email or any name resembling your real name. Any unauthorized access to your User Account may expose you to any loss, expense or civil or criminal liabilities. You acknowledge that GoFeds will not be responsible for your loss or expense caused by such unauthorized access.
-You understand that no online database is 100% safe and our Services are no exception. You agree to assume all risks associated with GoFeds or any Services available on the same. In no case shall we be liable for any loss, expense, or inconvenience caused by act, omission or an event not within our reasonable control.
+User Account. You must have a FedsConnect User Account for the use of FedsConnect which you can create by providing us with the Registration Information. All Services or your online activities on FedsConnect are tracked under your User Account.
+In no case shall you allow any person to access and use your User Account. In addition, you shall not transfer, sell, lease, sublet or assign your User Account to any other person/entity. You acknowledge that you are solely responsible for the use of your User Account. You must take care of the security of your User Account login information. You must not include in the username your real name, official email or any name resembling your real name. Any unauthorized access to your User Account may expose you to any loss, expense or civil or criminal liabilities. You acknowledge that FedsConnect will not be responsible for your loss or expense caused by such unauthorized access.
+You understand that no online database is 100% safe and our Services are no exception. You agree to assume all risks associated with FedsConnect or any Services available on the same. In no case shall we be liable for any loss, expense, or inconvenience caused by act, omission or an event not within our reasonable control.
 You acknowledge that we may suspend, terminate or limit any User Account or any Services without any prior notification to you. 
-User Information and User Content. You agree that we may use your User Information and User Content in connection with the Services under the Terms. In no case shall we knowingly disclose any of your User Information to any person or entity external to GoFeds unless with your express authorization to that effect. 
-Subject to anything provided to the contrary in the Term and applicable laws, you agree that by creating your User Account or by submitting any User Information, no fiduciary, confidential, or any other relationship is created between you and GoFeds.
-You grant us a world-wide, unlimited, perpetual, irrevocable, non-exclusive, sub-licensable, royalty-free, transferrable license to use, edit, reproduce, display, copy, transmit, print or publish, your User Information and User Content solely in connection with GoFeds and to satisfy any legal requirements. The license granted hereunder shall survive the expiry or termination of the User Agreement. You User-to-User communication is not encrypted and GoFeds may, in its sole discretion, access to the same, but GoFeds doesn’t normally access or view such communications. You must not carry out any prohibited activities or post any unauthorized content while using GoFeds chat. 
+User Information and User Content. You agree that we may use your User Information and User Content in connection with the Services under the Terms. In no case shall we knowingly disclose any of your User Information to any person or entity external to FedsConnect unless with your express authorization to that effect. 
+Subject to anything provided to the contrary in the Term and applicable laws, you agree that by creating your User Account or by submitting any User Information, no fiduciary, confidential, or any other relationship is created between you and FedsConnect.
+You grant us a world-wide, unlimited, perpetual, irrevocable, non-exclusive, sub-licensable, royalty-free, transferrable license to use, edit, reproduce, display, copy, transmit, print or publish, your User Information and User Content solely in connection with FedsConnect and to satisfy any legal requirements. The license granted hereunder shall survive the expiry or termination of the User Agreement. You User-to-User communication is not encrypted and FedsConnect may, in its sole discretion, access to the same, but FedsConnect doesn’t normally access or view such communications. You must not carry out any prohibited activities or post any unauthorized content while using FedsConnect chat. 
 Your User Information shall be treated in accordance with our Privacy Policy.
 Unauthorized content. “Prohibited Content” refers to any content that is or that includes:
 i.	Unlawful, obscene, objectionable, harassing, abusive, libelous, defamatory, derogatory, offensive, threatening or invasive to privacy, or that violates any rights or copyrights of any person/entity;
-ii.	Identifiable and personal information, data or content on GoFeds;
+ii.	Identifiable and personal information, data or content on FedsConnect;
 iii.	Virus, scripts, malicious programs, crawlers, spiders, or any program that is potentially harmful to the Services, the computer or devices of other Users or servers of any resource or service providers, or that otherwise slows down, interferes with or interrupts the proper operation of our system;
 iv.	False, inaccurate, wrong, inaccurate, fraudulent, misleading, or deceitful, outrageous; and
 v.	Unsolicited communications, spam, chain letters, or junk mail.
-Unless you are using the Services in compliance with the User Agreement, you shall not obtain unauthorized access to GoFeds. In no case shall you interfere with the access, use and enjoyment of GoFeds by other Users.
-You must not use the Support in a manner not intended by us to be used by any User. You shall not post any Prohibited Content or engage in any activities detrimental to the interests of GoFeds, third party service providers and our Users.
-You understand that GoFeds may, in its sole discretion, delete any User Content if the same has been found, in GoFeds’s sole judgment, to be posted in violation of any applicable laws or these Terms.
+Unless you are using the Services in compliance with the User Agreement, you shall not obtain unauthorized access to FedsConnect. In no case shall you interfere with the access, use and enjoyment of FedsConnect by other Users.
+You must not use the Support in a manner not intended by us to be used by any User. You shall not post any Prohibited Content or engage in any activities detrimental to the interests of FedsConnect, third party service providers and our Users.
+You understand that FedsConnect may, in its sole discretion, delete any User Content if the same has been found, in FedsConnect’s sole judgment, to be posted in violation of any applicable laws or these Terms.
 6. INTELLECTUAL PROPRIETARY RIGHTS AND GRANT OF LICENSE:
-Our Intellectual Property Rights. The Services are protected by copyrights, proprietary rights, patents, trademarks, service marks and applicable laws. We grant you a world-wide, non-exclusive, limited, revocable, non-sublicensable, royalty-free, personal, non-transferrable license to use the Services in the manner contemplated under the User Agreement or any other representation made available on GoFeds. 
-Unless otherwise expressly stated hereunder, you shall not sell, lease, transfer, copy, edit, reproduce, transmit, distribute, display, or prepare or make derivative work based on GoFeds Content without our express written approval. 
-Third Party Software, Content and Services. These Services include content, news content, User Content, resources, services, program or software owned and controlled by the parties including, but not limited to, our third party providers (“Third Party Content”) which may or may not be affiliated to or under the control of GoFeds, and GoFeds is, subject to the User Agreement, not liable for the Third Party Content, or any other content merely by reason that such Third Party Content is available on GoFeds. All Third Party Content are governed by their respective third party user agreement(s). If any conflict in connection with such Third Party Content arises between this User Agreement and third party user agreement, the third party user agreement shall prevail. 
-The presence of any Third Party Resources does not mean that GoFeds endorses the legal implication to that effect or owns any liability therefore. Your use of the Third Party Resources is a matter between you and the owner(s) or controller(s) of respective Third Party Content. You acknowledge that GoFeds will not be responsible for any damage, expense, cost, or loss arising from your use of Third Party Content. We strongly recommend you to review the third party user agreement before proceeding to use the Third Party Content.
+Our Intellectual Property Rights. The Services are protected by copyrights, proprietary rights, patents, trademarks, service marks and applicable laws. We grant you a world-wide, non-exclusive, limited, revocable, non-sublicensable, royalty-free, personal, non-transferrable license to use the Services in the manner contemplated under the User Agreement or any other representation made available on FedsConnect. 
+Unless otherwise expressly stated hereunder, you shall not sell, lease, transfer, copy, edit, reproduce, transmit, distribute, display, or prepare or make derivative work based on FedsConnect Content without our express written approval. 
+Third Party Software, Content and Services. These Services include content, news content, User Content, resources, services, program or software owned and controlled by the parties including, but not limited to, our third party providers (“Third Party Content”) which may or may not be affiliated to or under the control of FedsConnect, and FedsConnect is, subject to the User Agreement, not liable for the Third Party Content, or any other content merely by reason that such Third Party Content is available on FedsConnect. All Third Party Content are governed by their respective third party user agreement(s). If any conflict in connection with such Third Party Content arises between this User Agreement and third party user agreement, the third party user agreement shall prevail. 
+The presence of any Third Party Resources does not mean that FedsConnect endorses the legal implication to that effect or owns any liability therefore. Your use of the Third Party Resources is a matter between you and the owner(s) or controller(s) of respective Third Party Content. You acknowledge that FedsConnect will not be responsible for any damage, expense, cost, or loss arising from your use of Third Party Content. We strongly recommend you to review the third party user agreement before proceeding to use the Third Party Content.
 7. WARRANTIES AND DISCLAIMER
-UNLESS OTHERWISE STATED IN ANY PROVISIONS OF THE APPLICABLE LAWS AND THE USER AGREEMENT, OUR SERVCIES, USER CONTENT AND THIRD APRTY CONTENT ARE MADE AVAILABLE TO YOU ON “AS IS” AND “AS AVAILABLE” BASIS, AND GoFeds PROVIDES NO WARRANTIES, PROMISES, REPRESENTATIONS, IMPLIED OR EXPRESS, AS TO THE QUALITY, MERCHANTABILITY, RELIABILITY, TRUTHFULNESS UTILITY, NON-INFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE. NO PART OF THIRD PARTY CONTENT AND USER CONTENT REPRESENT THE VIEWS OF GoFeds AND GoFeds OWNS NO LIABILITY FOR ANY LOSS, DAMAGE OR EXPENSES CAUSED BY THIRD PARTY CONTENT OR USER CONTENT TO ANY USER OR ANY THIRD PARTY.
-UNLESS OTHERWISE STATED IN ANY PROVISIONS OF THE APPLICABLE LAWS AND THE USER AGREEMENT, GoFeds DOESN’T WARRANT OR REPRESENT THAT THE SERVICES ARE WITHOUT INTERRUPTION OR FREE FROM OMISSION, ERROR, DEFECTS, MISTAKES, INACCURACIES, VIRUS, HARMFUL OR MALICIOUS PROGRAMS.
+UNLESS OTHERWISE STATED IN ANY PROVISIONS OF THE APPLICABLE LAWS AND THE USER AGREEMENT, OUR SERVCIES, USER CONTENT AND THIRD APRTY CONTENT ARE MADE AVAILABLE TO YOU ON “AS IS” AND “AS AVAILABLE” BASIS, AND FedsConnect PROVIDES NO WARRANTIES, PROMISES, REPRESENTATIONS, IMPLIED OR EXPRESS, AS TO THE QUALITY, MERCHANTABILITY, RELIABILITY, TRUTHFULNESS UTILITY, NON-INFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE. NO PART OF THIRD PARTY CONTENT AND USER CONTENT REPRESENT THE VIEWS OF FedsConnect AND FedsConnect OWNS NO LIABILITY FOR ANY LOSS, DAMAGE OR EXPENSES CAUSED BY THIRD PARTY CONTENT OR USER CONTENT TO ANY USER OR ANY THIRD PARTY.
+UNLESS OTHERWISE STATED IN ANY PROVISIONS OF THE APPLICABLE LAWS AND THE USER AGREEMENT, FedsConnect DOESN’T WARRANT OR REPRESENT THAT THE SERVICES ARE WITHOUT INTERRUPTION OR FREE FROM OMISSION, ERROR, DEFECTS, MISTAKES, INACCURACIES, VIRUS, HARMFUL OR MALICIOUS PROGRAMS.
 WE USE OUR BEST EFFORTS IN PROVISION OF THE SERVICES, BUT DUE TO TECHNOLOGY LIMITATIONS, WE DON’T WARRANT THAT OUR SERVICES CONSTITUTE PROFESSIONAL AND FINANCIAL ADVICE OR SUBSTITUTE FOR ANY ADVICE PROVIDED BY LICENSDED PROFESSIONALS. 
-NO REPRESENTATION, INFORMATION OR CONTENT ON GoFeds AIMS TO CREATE A PROFESSIONAL- CLIENT, EMPLOYER-EMPLOYEE OR FIDUCIARY RELATIONSHIP. YOU ARE RECOMMENDED TO ACT UPON ANY CONTENT OR REPRESENTATION AFTER SEEKING PROFESSIONAL ADVICE. 
+NO REPRESENTATION, INFORMATION OR CONTENT ON FedsConnect AIMS TO CREATE A PROFESSIONAL- CLIENT, EMPLOYER-EMPLOYEE OR FIDUCIARY RELATIONSHIP. YOU ARE RECOMMENDED TO ACT UPON ANY CONTENT OR REPRESENTATION AFTER SEEKING PROFESSIONAL ADVICE. 
 8. INDEMNIFICATION:
-YOU AGREE TO INDEMNIFY AND HOLD GoFeds AND ITS OWNERS, EMPLOYEES, OFFICERS, CONTRACTORS, SERVICE PROVIDERS, ADVISERS, AGENTS AND ASSIGNS (“GoFeds PARTIES”) FROM ALL OR ANY LOSSES, EXPENSES, COSTS (INCLUDING, WITHOUT LIMITATION, ATTRONEY’S FEE), DAMAGES, CLAIMS, DEMANDS, OBLIGAITONS, OR LIABILITIES BASED ON OR ARISING FROM (A) YOUR INFRINGEMENT OF ANY RIGHTS OF ANY THIRD PARTY OR OUR SERVICE PROVIDER(S), (B) ANY DISPUTE OR LITIGATION BETWEEN YOU AND ANY THIRD PARTY; (C) YOUR USE OF THE SERVICES; (d) USER CONTENT; (e) YOUR BREACH OF THE USER AGREEMENT OR ANY THIRD PARTY USER AGREEMENT OR (f) ANY PROHIBITED CONTENT POSTED BY YOU; (G) YOUR MISCONDUCT.
+YOU AGREE TO INDEMNIFY AND HOLD FedsConnect AND ITS OWNERS, EMPLOYEES, OFFICERS, CONTRACTORS, SERVICE PROVIDERS, ADVISERS, AGENTS AND ASSIGNS (“FedsConnect PARTIES”) FROM ALL OR ANY LOSSES, EXPENSES, COSTS (INCLUDING, WITHOUT LIMITATION, ATTRONEY’S FEE), DAMAGES, CLAIMS, DEMANDS, OBLIGAITONS, OR LIABILITIES BASED ON OR ARISING FROM (A) YOUR INFRINGEMENT OF ANY RIGHTS OF ANY THIRD PARTY OR OUR SERVICE PROVIDER(S), (B) ANY DISPUTE OR LITIGATION BETWEEN YOU AND ANY THIRD PARTY; (C) YOUR USE OF THE SERVICES; (d) USER CONTENT; (e) YOUR BREACH OF THE USER AGREEMENT OR ANY THIRD PARTY USER AGREEMENT OR (f) ANY PROHIBITED CONTENT POSTED BY YOU; (G) YOUR MISCONDUCT.
 You shall not upload, transmit, distribute, post or share any Prohibited Content. You shall be liable for all losses, damages, and consequential losses arising from Prohibited Content or any activities prohibited under the User Agreement.
-Except otherwise expressly provided in this User Agreement and to the fullest extent permitted by the applicable law, GoFeds owns no liability for any losses or damages, whether direct, indirect, incidental, special or consequential in nature, arising out of your use or inability to use the Services, changes in the Services or interruption in the operation of the Services, failure to meet your expectations or errors, omissions, mistakes, defects, harmful programs or any security breach of your User Information or any Prohibited Content posted or prohibited activities executed by other Users.
-Unless where it is not legally permitted, GoFeds Parties shall not be liable for any indirect, incidental, exemplary, consequential, special, or punitive damages, including, but not limited to, any lost profits or future business opportunity arising from your use of the Services, even if we, GoFeds Parties, have been advised of the possibility of such loss.  In no event our maximum aggregate liability arising from your use of the Services shall exceed zero dollars.
-You acknowledge that you are solely responsible for: (a) Your User Content and communication through GoFeds chat; (b) Your User Information, and (c) Your activities on GoFeds.
+Except otherwise expressly provided in this User Agreement and to the fullest extent permitted by the applicable law, FedsConnect owns no liability for any losses or damages, whether direct, indirect, incidental, special or consequential in nature, arising out of your use or inability to use the Services, changes in the Services or interruption in the operation of the Services, failure to meet your expectations or errors, omissions, mistakes, defects, harmful programs or any security breach of your User Information or any Prohibited Content posted or prohibited activities executed by other Users.
+Unless where it is not legally permitted, FedsConnect Parties shall not be liable for any indirect, incidental, exemplary, consequential, special, or punitive damages, including, but not limited to, any lost profits or future business opportunity arising from your use of the Services, even if we, FedsConnect Parties, have been advised of the possibility of such loss.  In no event our maximum aggregate liability arising from your use of the Services shall exceed zero dollars.
+You acknowledge that you are solely responsible for: (a) Your User Content and communication through FedsConnect chat; (b) Your User Information, and (c) Your activities on FedsConnect.
 9. USER PRIVACY:
 Your privacy is highly important to us. We use all means of industry standards to protect your User Information. All User Information is collected, stored, maintained and used in accordance with our Privacy Policy. You may find our Privacy Policy here.
 10. AMENDMENTS AND MODIFICATIONS:  
-GoFeds may amend and modify User Agreement at any time without any prior notification. Your continued use of the Services subsequent to such amendments or modifications shall be governed by the latest version of User Agreement. 
+FedsConnect may amend and modify User Agreement at any time without any prior notification. Your continued use of the Services subsequent to such amendments or modifications shall be governed by the latest version of User Agreement. 
 11. WARRANTIES &amp; REPRESENTATIONS
 You represent and warrant that:
 (a)	Your User Information is accurate and current, and contains no misleading fact;
 (b)	You are using the Services in compliance with any applicable laws and the User Agreement;
 (c)	You shall not post or transmit any Prohibited Content or carry out any prohibited activities;
 (d)	You fully understand and assume the risks involved in online communication with other Users; 
-(e)	GoFeds has no association with any State or Federal Government agency or receive any funds from such governments; and
-(f)	You understand that Third Party Content and User Content don’t represent the views of GoFeds.
+(e)	FedsConnect has no association with any State or Federal Government agency or receive any funds from such governments; and
+(f)	You understand that Third Party Content and User Content don’t represent the views of FedsConnect.
 12. COMPLIANCE WITH THE APPLICABLE LAWS:
-Being professional service provider, GoFeds provides you with the Services under the Federal laws of the USA and the State Laws of California. Your use of the Services is conditional to your compliance with the User Agreement and applicable laws. If you violate any provisions of this section, we may, depending on the severity of the violation, suspend or terminate your User Account in addition to reporting the matter to the concerned authorities and availing any legal remedy.
+Being professional service provider, FedsConnect provides you with the Services under the Federal laws of the USA and the State Laws of California. Your use of the Services is conditional to your compliance with the User Agreement and applicable laws. If you violate any provisions of this section, we may, depending on the severity of the violation, suspend or terminate your User Account in addition to reporting the matter to the concerned authorities and availing any legal remedy.
 12. CODE OF CONDUCT:
 You agree not to engage in any of the following prohibited activities: 
-(i) Copying or distributing any part or content on GoFeds through any medium, including, but not limited to, by any automated or/and non-automated “scraping”;
+(i) Copying or distributing any part or content on FedsConnect through any medium, including, but not limited to, by any automated or/and non-automated “scraping”;
 (ii) Transmitting spam, unsolicited emails and/or chain letters;
 (iii) Attempting to compromise or interfere in the integrity or security of our system or code or encode any communication transmitted to or from our host servers; 
 (iv) Doing any act that burdens or slows down our system;  
 (v) Uploading, posting or introducing virus, harmful content or data, worms, or other malignant programs or agents to Services;
-(vi) Collecting or harvesting any personal information of any a user, including emails, User Account information from GoFeds; 
-(vii) Using GoFeds for any commercial solicitations; 
+(vi) Collecting or harvesting any personal information of any a user, including emails, User Account information from FedsConnect; 
+(vii) Using FedsConnect for any commercial solicitations; 
 (viii) Committing fraud or/and misrepresentation or any criminal activity; 
 (ix) Interfering with the operation of our system; 
-(xi) Accessing or using any content on GoFeds by using any technology or media other than the normal browser or application; or 
+(xi) Accessing or using any content on FedsConnect by using any technology or media other than the normal browser or application; or 
 (xii) Foiling the measures or arrangements we may use to restrict, limit or prevent access to or use of Service.
-GoFeds offers Services for your personal use. It is not designed to be used for any commercial purposes or to be used on the behalf of any third party. You must not allow your User Account to be used by any third party. 
+FedsConnect offers Services for your personal use. It is not designed to be used for any commercial purposes or to be used on the behalf of any third party. You must not allow your User Account to be used by any third party. 
 You acknowledge your responsibilities to observe ethics, courteous behavior, and to take precaution with respect to your interactions with your fellow Users. We may, but not obligated, to track the record of your conversation with your fellow User and resolve the disputes between you and your fellow Users.  It is further provided that we shall have no liability as to your interactions with your fellow Users, or their act or omission.
-You represent and warrant that you shall observe code of conduct while using GoFeds. 
+You represent and warrant that you shall observe code of conduct while using FedsConnect. 
 In case of any abuse of Services or violation of these Terms by any User, you are encouraged to report the same to us at: stackrage01@gmail.com.
 14. GOVERNING LAWS AND DISPUTE RESOLUTION:
 The Terms is governed by the applicable laws of the State of California, USA. In case of any dispute, not being an offense, arising from these Terms, the dispute shall be first resolved through negotiations made in good faith between the authorized representatives of the Parties. If the negotiations fail to resolve the dispute to the Parties’ mutual satisfaction within sixty (60) calendar days commencing from the date on which the dispute is notified to the other party in writing, or such additional time the parties mutually agreed upon, such dispute shall be referred to the arbitration appointed by the American Arbitration Association (AAA). The arbitration shall be binding and administered by a single arbitrator in the English language in accordance with the Rules of the AAA. The award of the arbitrator may include compensatory damages. The arbitrator shall not award punitive or multiple damages against the other Party.
@@ -586,7 +586,7 @@ If any provision of the Terms is intended to survive any termination thereof, th
 17. CONTACT:
 In case of any communication in connection with the Terms or for softcopy of the Terms, please contact us through the following address: stackrage01@gmail.com
 Last Updated: 07/2020
-</string>
+</mutableString>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -813,39 +813,39 @@ Last Updated: 07/2020
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Username" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wgw-aA-dJR">
-                                                <rect key="frame" x="25" y="333" width="369" height="17"/>
+                                                <rect key="frame" x="25" y="333" width="369" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZM-FD-RwA">
-                                                <rect key="frame" x="25" y="358" width="369" height="2"/>
+                                                <rect key="frame" x="25" y="359.5" width="369" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Gt9-9Q-qum"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LB-TO-cFy">
-                                                <rect key="frame" x="25" y="390" width="369" height="18"/>
+                                                <rect key="frame" x="25" y="391.5" width="369" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="**********************" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="AQd-Zp-MsM">
-                                                <rect key="frame" x="25" y="418" width="369" height="17"/>
+                                                <rect key="frame" x="25" y="419.5" width="369" height="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8n0-a6-oJu">
-                                                <rect key="frame" x="25" y="443" width="369" height="2"/>
+                                                <rect key="frame" x="25" y="444.5" width="369" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="qXN-Zi-IAJ"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-J3-s7g" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
-                                                <rect key="frame" x="157" y="545" width="100" height="50"/>
+                                                <rect key="frame" x="157" y="546.5" width="100" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3Fy-Lv-thZ"/>
                                                     <constraint firstAttribute="width" constant="100" id="pog-A6-fmq"/>
@@ -867,7 +867,7 @@ Last Updated: 07/2020
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ect-a8-S8n">
-                                                <rect key="frame" x="286" y="455" width="108" height="27"/>
+                                                <rect key="frame" x="286" y="456.5" width="108" height="27"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <state key="normal" title="Forget Password?">
                                                     <color key="titleColor" red="0.1333333333" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -877,13 +877,13 @@ Last Updated: 07/2020
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBX-eE-Kl3">
-                                                <rect key="frame" x="133.5" y="605" width="147" height="16"/>
+                                                <rect key="frame" x="133.5" y="606.5" width="147" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIu-fu-kTE">
-                                                <rect key="frame" x="282.5" y="599" width="51" height="28"/>
+                                                <rect key="frame" x="282.5" y="600.5" width="51" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" red="0.058823529409999999" green="0.14901960780000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -894,7 +894,7 @@ Last Updated: 07/2020
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8t-g2-fKF">
-                                                <rect key="frame" x="89" y="462" width="78.5" height="13.5"/>
+                                                <rect key="frame" x="89" y="463.5" width="78.5" height="13.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -912,7 +912,7 @@ Last Updated: 07/2020
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mWd-2k-zBo">
-                                                <rect key="frame" x="25" y="453" width="51" height="31"/>
+                                                <rect key="frame" x="25" y="454.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.01176470588" green="0.73725490199999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" red="0.058823529409999999" green="0.14901960780000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -922,7 +922,7 @@ Last Updated: 07/2020
                                                 </userDefinedRuntimeAttributes>
                                             </switch>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwrd" translatesAutoresizingMaskIntoConstraints="NO" id="EFf-Bf-EHr">
-                                                <rect key="frame" x="364" y="414" width="25" height="25"/>
+                                                <rect key="frame" x="364" y="415.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="7a7-Jr-LMQ"/>
                                                     <constraint firstAttribute="height" constant="25" id="FrG-D6-XEp"/>
@@ -1018,7 +1018,7 @@ Last Updated: 07/2020
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl8-fy-8Sl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-eO-1b3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
@@ -2806,7 +2806,7 @@ Last Updated: 07/2020
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upu-Q1-HkX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-tf-Pa6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
@@ -2840,96 +2840,96 @@ Last Updated: 07/2020
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Rank" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kLY-sz-OXa">
-                                                <rect key="frame" x="20" y="273" width="374" height="17"/>
+                                                <rect key="frame" x="20" y="273" width="374" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ne7-9P-AcF">
-                                                <rect key="frame" x="20" y="298" width="374" height="2"/>
+                                                <rect key="frame" x="20" y="299.5" width="374" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="S2P-Bq-erB"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGENCY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-OW-SCf">
-                                                <rect key="frame" x="20" y="320" width="62" height="18"/>
+                                                <rect key="frame" x="20" y="321.5" width="62" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Agency" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KVI-44-nem">
-                                                <rect key="frame" x="20" y="348" width="374" height="17"/>
+                                                <rect key="frame" x="20" y="349.5" width="374" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iF-55-Kre">
-                                                <rect key="frame" x="20" y="373" width="374" height="2"/>
+                                                <rect key="frame" x="20" y="376" width="374" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Op9-R5-uot"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFFICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2A-Qc-gvB">
-                                                <rect key="frame" x="20" y="395" width="374" height="18"/>
+                                                <rect key="frame" x="20" y="398" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Office" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3q6-qc-IOa">
-                                                <rect key="frame" x="20" y="423" width="374" height="17"/>
+                                                <rect key="frame" x="20" y="426" width="374" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-2C-o6M">
-                                                <rect key="frame" x="20" y="448" width="374" height="2"/>
+                                                <rect key="frame" x="20" y="452.5" width="374" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Bni-PQ-oUL"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT PORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUt-OX-E93">
-                                                <rect key="frame" x="20" y="470" width="374" height="18"/>
+                                                <rect key="frame" x="20" y="474.5" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current port" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-4u-P2T">
-                                                <rect key="frame" x="20" y="498" width="374" height="17"/>
+                                                <rect key="frame" x="20" y="502.5" width="374" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-cz-YgI">
-                                                <rect key="frame" x="20" y="523" width="374" height="2"/>
+                                                <rect key="frame" x="20" y="529" width="374" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="tcP-BE-rxb"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESIRED PORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEq-Uj-rth">
-                                                <rect key="frame" x="20" y="545" width="374" height="18"/>
+                                                <rect key="frame" x="20" y="551" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Desired port" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-7p-dB6">
-                                                <rect key="frame" x="20" y="573" width="374" height="17"/>
+                                                <rect key="frame" x="20" y="579" width="374" height="18.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-Yr-xB9">
-                                                <rect key="frame" x="20" y="598" width="374" height="2"/>
+                                                <rect key="frame" x="20" y="605.5" width="374" height="2"/>
                                                 <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="5ew-Q7-FT0"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaV-bk-HOn" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
-                                                <rect key="frame" x="157" y="650" width="100" height="50"/>
+                                                <rect key="frame" x="157" y="657.5" width="100" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="VwN-zN-I3m"/>

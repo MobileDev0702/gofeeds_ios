@@ -2,9 +2,6 @@
 //  Message.swift
 //  GoFeds
 //
-//  Created by Inderveer Singh on 06/06/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import Foundation
 import UIKit

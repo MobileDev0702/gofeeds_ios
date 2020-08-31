@@ -2,9 +2,6 @@
 //  Extensions.swift
 //  POS-Native
 //
-//  Created by intersoft-kansal on 27/11/17.
-//  Copyright © 2017 intersoft-kansal. All rights reserved.
-//
 
 import Foundation
 import UIKit

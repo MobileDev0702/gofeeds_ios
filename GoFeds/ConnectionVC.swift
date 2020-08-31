@@ -2,9 +2,6 @@
 //  ConnectionVC.swift
 //  GoFeds
 //
-//  Created by Novos on 21/04/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -40,19 +37,19 @@ class ConnectionVC: UIViewController {
         notificationCount.clipsToBounds = true
         
         let badgeCount = UserDefaults.standard.string(forKey: "BadgeCount")
-        if badgeCount == "0" {
+        if badgeCount == "0" || badgeCount!.isEmpty {
             notificationCount.isHidden = true
         } else {
             notificationCount.isHidden = false
             notificationCount.text = badgeCount
         }
-        
-        getExactMatchesList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = false
+        
+        getExactMatchesList()
     }
     
     func getExactMatchesList() {
@@ -141,6 +138,7 @@ class ConnectionVC: UIViewController {
 //               self.navigationController?.isNavigationBarHidden = true
 //               self.navigationController?.pushViewController(vc!, animated: true)
         notificationCount.isHidden = true
+        UserDefaults.standard.set("0", forKey: "BadgeCount")
         self.performSegue(withIdentifier: "ConnectionToChatVC", sender: nil)
     }
     

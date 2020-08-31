@@ -40,6 +40,7 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
         if LoginSession.isActive() {
 //            let dataDict:[String: String] = ["token": LoginSession.getValueOf(key: SessionKeys.fToken)]
 //            NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+            
             UserDefaults.standard.set(LoginSession.getValueOf(key: SessionKeys.fToken), forKey: "FCMToken")
         } else {
             if let token = Messaging.messaging().fcmToken {
@@ -60,6 +61,7 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
         completionHandler()
     }
 }

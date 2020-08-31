@@ -2,9 +2,6 @@
 //  AlertControllerHandler.swift
 //  Imperial Beats
 //
-//  Created by Gaurav Tiwari on 28/12/17.
-//  Copyright © 2017 Igniva Solutions Pvt Ltd. All rights reserved.
-//
 
 import UIKit
 
@@ -32,7 +29,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    func presentAlertWithTitle(title: Messages = .custom("GoFeds"), message: Messages, options: AlertButtonTitle..., completion: CompletionHandler = nil) {
+    func presentAlertWithTitle(title: Messages = .custom("FedsConnect"), message: Messages, options: AlertButtonTitle..., completion: CompletionHandler = nil) {
         let alertController = UIAlertController(title: title.value, message: message.value, preferredStyle: .alert)
         
         for (index, option) in options.enumerated() {

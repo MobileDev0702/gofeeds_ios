@@ -2,9 +2,6 @@
 //  SubmitAnswerVC.swift
 //  GoFeds
 //
-//  Created by Tarun Sachdeva on 12/05/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -34,7 +31,8 @@ class SubmitAnswerVC: UIViewController {
     func submitAnswer() {
         Utility.showActivityIndicator()
         let url = SubmitFAQAnswerUrl
-        let newAnswerTxt = txtAnswer.text.replacingOccurrences(of: "'", with: "\'")
+        let newAnswerTxt = txtAnswer.text.replacingOccurrences(of: "'", with: "\\'")
+        
         Alamofire.request(url,  method: .post, parameters: ["question_id" : (questionData["question_id"] as! String),"user_id":(LoginSession.currentUserId),"answer":newAnswerTxt, "vote":0]).responseJSON { response in
             
             let value = response.result.value as! [String:Any]?

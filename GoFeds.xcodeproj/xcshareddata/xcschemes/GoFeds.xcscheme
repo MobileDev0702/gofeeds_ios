@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0DD726632449AB4800B74DFE"
-               BuildableName = "GoFeds.app"
+               BuildableName = "FedsConnect.app"
                BlueprintName = "GoFeds"
                ReferencedContainer = "container:GoFeds.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DD726632449AB4800B74DFE"
-            BuildableName = "GoFeds.app"
+            BuildableName = "FedsConnect.app"
             BlueprintName = "GoFeds"
             ReferencedContainer = "container:GoFeds.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DD726632449AB4800B74DFE"
-            BuildableName = "GoFeds.app"
+            BuildableName = "FedsConnect.app"
             BlueprintName = "GoFeds"
             ReferencedContainer = "container:GoFeds.xcodeproj">
          </BuildableReference>

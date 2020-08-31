@@ -2,9 +2,6 @@
 //  Conversation.swift
 //  CSS POS
 //
-//  Created by intersoft-admin on 21/09/18.
-//  Copyright © 2018 intersoft-kansal. All rights reserved.
-//
 
 import Foundation
 import FirebaseAuth

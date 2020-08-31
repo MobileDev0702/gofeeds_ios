@@ -2,9 +2,6 @@
 //  EditCalendarVC.swift
 //  GoFeds
 //
-//  Created by Novos on 29/04/20.
-//  Copyright © 2020 Novos. All rights reserved.
-//
 
 import UIKit
 
