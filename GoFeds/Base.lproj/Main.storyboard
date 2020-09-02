@@ -11,7 +11,7 @@
         <!--Sign UpVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" id="BYZ-38-t0r" customClass="SignUpVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="BYZ-38-t0r" customClass="SignUpVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,6 +159,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rank" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-pA-qqr">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -209,6 +210,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Agency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-Yg-H6r">
                                                         <rect key="frame" x="0.0" y="1.5" width="374" height="18.5"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -257,6 +259,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Office" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vBp-uN-MtQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -296,7 +299,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="B97-TY-TSn"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="877-s7-1Kd" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="877-s7-1Kd" customClass="GradientButton" customModule="FedsConnect" customModuleProvider="target">
                                                 <rect key="frame" x="157" y="853" width="100" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="2Vu-jt-W1F"/>
@@ -480,8 +483,8 @@
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jzB-hh-KDa">
                                         <rect key="frame" x="12" y="60" width="390" height="758"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <mutableString key="text">TERMS AND CONDITIONS
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">TERMS AND CONDITIONS
 
 1. OVERVIEW:
 WELCOME TO FedsConnect APP. WE PROVIDE CHAT AND NEWS FED PLATFORM. OUR SERVICES DON’T SUBSTITUTE FOR THE PROFESSIONAL NEWS AGENCIES. PLEASE READ THESE TERMS OF USE (“TERMS”) CAREFULLY BEFORE USING THIS APP OR SERVICES MADE AVAILABLE THROUGH THIS APP. YOUR USE OF THE SERVICES IS GOVERNED BY THESE TERMS WHICH CONSTITUTE A BINDING LEGAL AGREEMENT BETWEEN YOU AND FedsConnect. BY CREATING YOUR USER ACCOUNT AND USING OUR SERVICES, YOU ACKNOWLEDGE AND REPRESENT THAT YOU HAVE READ AND AGREED TO THESE TERMS. 
@@ -586,7 +589,7 @@ If any provision of the Terms is intended to survive any termination thereof, th
 17. CONTACT:
 In case of any communication in connection with the Terms or for softcopy of the Terms, please contact us through the following address: stackrage01@gmail.com
 Last Updated: 07/2020
-</mutableString>
+</string>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -642,7 +645,7 @@ Last Updated: 07/2020
         <!--Chat-->
         <scene sceneID="NwX-7G-nPI">
             <objects>
-                <viewController storyboardIdentifier="ChatVC" id="65Y-Rf-awE" customClass="ChatVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVC" id="65Y-Rf-awE" customClass="ChatVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rsl-5f-IhK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -655,7 +658,7 @@ Last Updated: 07/2020
                                 <rect key="frame" x="0.0" y="179" width="414" height="634"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="HqG-Bi-jDS" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="HqG-Bi-jDS" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HqG-Bi-jDS" id="VJo-ey-OPK">
@@ -792,7 +795,7 @@ Last Updated: 07/2020
         <!--LoginVC-->
         <scene sceneID="zp7-eN-wgJ">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="Z7b-cY-rGE" customClass="LoginVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="Z7b-cY-rGE" customClass="LoginVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OBP-gP-IL6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -844,7 +847,7 @@ Last Updated: 07/2020
                                                     <constraint firstAttribute="height" constant="2" id="qXN-Zi-IAJ"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-J3-s7g" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-J3-s7g" customClass="GradientButton" customModule="FedsConnect" customModuleProvider="target">
                                                 <rect key="frame" x="157" y="546.5" width="100" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3Fy-Lv-thZ"/>
@@ -1012,13 +1015,13 @@ Last Updated: 07/2020
         <!--ProfileVC-->
         <scene sceneID="ukq-al-ZQl">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="3nB-9m-VyV" customClass="ProfileVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="3nB-9m-VyV" customClass="ProfileVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sgt-vh-bAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl8-fy-8Sl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-eO-1b3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
@@ -1222,7 +1225,7 @@ Last Updated: 07/2020
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-ds-SCK" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-ds-SCK" customClass="GradientButton" customModule="FedsConnect" customModuleProvider="target">
                                                 <rect key="frame" x="167" y="660" width="80" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="UJY-d9-knd"/>
@@ -1385,7 +1388,7 @@ Last Updated: 07/2020
         <!--Forum-->
         <scene sceneID="KcB-cw-BMs">
             <objects>
-                <viewController storyboardIdentifier="ForumVC" id="BBh-r9-g3h" customClass="ForumVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForumVC" id="BBh-r9-g3h" customClass="ForumVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="144-Am-Dfs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1407,7 +1410,7 @@ Last Updated: 07/2020
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="121" id="dyy-EH-VJE" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="121" id="dyy-EH-VJE" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dyy-EH-VJE" id="c9e-si-oEL">
@@ -1534,7 +1537,7 @@ Last Updated: 07/2020
         <!--Add QuestionVC-->
         <scene sceneID="hiB-QC-tPz">
             <objects>
-                <viewController storyboardIdentifier="AddQuestionVC" id="2Te-Wy-fch" customClass="AddQuestionVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddQuestionVC" id="2Te-Wy-fch" customClass="AddQuestionVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yo3-XG-gl1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1644,7 +1647,7 @@ Last Updated: 07/2020
         <!--Forum Answer ListVC-->
         <scene sceneID="gXF-Tb-Suq">
             <objects>
-                <viewController storyboardIdentifier="ForumAnswerListVC" id="TIZ-tE-9sk" customClass="ForumAnswerListVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForumAnswerListVC" id="TIZ-tE-9sk" customClass="ForumAnswerListVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pn9-Ty-kFg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1687,14 +1690,14 @@ Last Updated: 07/2020
                                                 <rect key="frame" x="0.0" y="208" width="414" height="550"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="121" id="B14-eR-vGH" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="121" id="B14-eR-vGH" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="121"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B14-eR-vGH" id="P7V-MV-v5e">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dST-av-vRE" userLabel="baseView" customClass="IBView" customModule="GoFeds" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dST-av-vRE" userLabel="baseView" customClass="IBView" customModule="FedsConnect" customModuleProvider="target">
                                                                     <rect key="frame" x="8" y="8" width="398" height="105"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Jxf-A8-w9w">
@@ -1866,12 +1869,12 @@ Last Updated: 07/2020
         <!--Submit AnswerVC-->
         <scene sceneID="Seu-uf-xwD">
             <objects>
-                <viewController storyboardIdentifier="SubmitAnswerVC" modalPresentationStyle="overCurrentContext" id="nuv-up-WX0" customClass="SubmitAnswerVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubmitAnswerVC" modalPresentationStyle="overCurrentContext" id="nuv-up-WX0" customClass="SubmitAnswerVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="opv-s3-59S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoo-QR-YvR" userLabel="baseView" customClass="IBView" customModule="GoFeds" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoo-QR-YvR" userLabel="baseView" customClass="IBView" customModule="FedsConnect" customModuleProvider="target">
                                 <rect key="frame" x="20" y="223" width="374" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit your answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niq-3V-n93">
@@ -1960,7 +1963,7 @@ Last Updated: 07/2020
         <!--SettingVC-->
         <scene sceneID="grW-m0-pWM">
             <objects>
-                <viewController storyboardIdentifier="SettingVC" id="4rV-v9-KWY" customClass="SettingVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" id="4rV-v9-KWY" customClass="SettingVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ir-Jf-4u5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2319,7 +2322,7 @@ Last Updated: 07/2020
         <!--ChattingVC-->
         <scene sceneID="E6V-FA-ryD">
             <objects>
-                <viewController storyboardIdentifier="chattingVC" id="gIT-Wx-Mhy" customClass="chattingVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chattingVC" id="gIT-Wx-Mhy" customClass="chattingVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CGx-1x-CDw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2380,7 +2383,7 @@ Last Updated: 07/2020
         <!--ConnectionVC-->
         <scene sceneID="6Sa-Ap-EAL">
             <objects>
-                <viewController storyboardIdentifier="ConnectionVC" id="mXg-cf-bym" customClass="ConnectionVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectionVC" id="mXg-cf-bym" customClass="ConnectionVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLZ-rq-LQQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2483,7 +2486,7 @@ Last Updated: 07/2020
                                 <rect key="frame" x="0.0" y="244" width="414" height="569"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="76" id="czx-ug-OEi" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="76" id="czx-ug-OEi" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czx-ug-OEi" id="waa-F0-7fY">
@@ -2607,7 +2610,7 @@ Last Updated: 07/2020
         <!--Tab BarVC-->
         <scene sceneID="s4y-bM-1iy">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarVC" id="F6Q-IJ-hNS" customClass="TabBarVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" id="F6Q-IJ-hNS" customClass="TabBarVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4fv-cV-LQt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bXe-ms-EP3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -2628,7 +2631,7 @@ Last Updated: 07/2020
         <!--ScheduleVC-->
         <scene sceneID="NcF-oz-PkO">
             <objects>
-                <viewController storyboardIdentifier="ScheduleVC" id="X3h-y7-Yz8" customClass="ScheduleVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleVC" id="X3h-y7-Yz8" customClass="ScheduleVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Pf-yg-5n9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2713,7 +2716,7 @@ Last Updated: 07/2020
         <!--Edit CalendarVC-->
         <scene sceneID="038-L0-Kvz">
             <objects>
-                <viewController storyboardIdentifier="EditCalendarVC" id="p6D-M9-ifJ" customClass="EditCalendarVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditCalendarVC" id="p6D-M9-ifJ" customClass="EditCalendarVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wvh-ju-7aA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2743,7 +2746,7 @@ Last Updated: 07/2020
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFR-fP-tgw" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFR-fP-tgw" customClass="GradientButton" customModule="FedsConnect" customModuleProvider="target">
                                 <rect key="frame" x="20" y="342" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="myw-bt-Qcf"/>
@@ -2800,13 +2803,13 @@ Last Updated: 07/2020
         <!--My ProfileVC-->
         <scene sceneID="rdj-8r-wyC">
             <objects>
-                <viewController storyboardIdentifier="MyProfileVC" id="BxD-cN-QZs" customClass="MyProfileVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileVC" id="BxD-cN-QZs" customClass="MyProfileVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bk7-cs-iYL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upu-Q1-HkX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-tf-Pa6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
@@ -2928,7 +2931,7 @@ Last Updated: 07/2020
                                                     <constraint firstAttribute="height" constant="2" id="5ew-Q7-FT0"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaV-bk-HOn" customClass="GradientButton" customModule="GoFeds" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaV-bk-HOn" customClass="GradientButton" customModule="FedsConnect" customModuleProvider="target">
                                                 <rect key="frame" x="157" y="657.5" width="100" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -3072,7 +3075,7 @@ Last Updated: 07/2020
         <!--Multi Selection Pop UpVC-->
         <scene sceneID="Sna-Hl-6RV">
             <objects>
-                <viewController storyboardIdentifier="multiSelectionPopUpVC" modalPresentationStyle="overCurrentContext" id="VdF-am-vEw" customClass="multiSelectionPopUpVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="multiSelectionPopUpVC" modalPresentationStyle="overCurrentContext" id="VdF-am-vEw" customClass="multiSelectionPopUpVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Yt-qM-bbO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3153,7 +3156,7 @@ Last Updated: 07/2020
         <!--News Feed-->
         <scene sceneID="9Zs-ju-8gN">
             <objects>
-                <viewController storyboardIdentifier="NewsFeedVC" id="rSa-5Z-6IV" customClass="NewsFeedVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsFeedVC" id="rSa-5Z-6IV" customClass="NewsFeedVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcH-6j-p3X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3179,7 +3182,7 @@ Last Updated: 07/2020
                                 <rect key="frame" x="0.0" y="104" width="414" height="709"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="150" id="FR9-Un-Z5c" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="150" id="FR9-Un-Z5c" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FR9-Un-Z5c" id="ipQ-f4-Z6T">
@@ -3284,7 +3287,7 @@ Last Updated: 07/2020
         <!--News DetailsVC-->
         <scene sceneID="JEV-Vk-k6e">
             <objects>
-                <viewController storyboardIdentifier="NewsDetailsVC" id="hZA-oB-F4L" customClass="NewsDetailsVC" customModule="GoFeds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsDetailsVC" id="hZA-oB-F4L" customClass="NewsDetailsVC" customModule="FedsConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ydu-3m-4rp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3429,7 +3432,7 @@ Last Updated: 07/2020
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="175" id="mbL-Ha-ghD" customClass="CommonTableViewCell" customModule="GoFeds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="175" id="mbL-Ha-ghD" customClass="CommonTableViewCell" customModule="FedsConnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbL-Ha-ghD" id="qIp-3D-KQ4">
