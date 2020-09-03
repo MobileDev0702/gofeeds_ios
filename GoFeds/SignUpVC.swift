@@ -187,8 +187,19 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         }else {
             
             //FireBase
-            termsView.isHidden = false
-//            handleFirebaseRegistration()
+            FirebaseAuth.Auth.auth().fetchSignInMethods(forEmail: emailTextfld.text!, completion: { (providers, error) in
+                if let error = error {
+                    let okAction: AlertButtonWithAction = (.ok, nil)
+                    self.showAlertWith(message: .custom(error.localizedDescription)!, actions: okAction)
+                } else {
+                    if providers != nil {
+                        let okAction: AlertButtonWithAction = (.ok, nil)
+                        self.showAlertWith(message: .custom("The email address is already in use by another account.")!, actions: okAction)
+                    } else {
+                        self.termsView.isHidden = false
+                    }
+                }
+            })
         }
     }
     

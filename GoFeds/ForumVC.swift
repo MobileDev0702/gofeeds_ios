@@ -27,6 +27,10 @@ class ForumVC: UIViewController , QuestionSubmittedDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getAllForumList()
+    }
+    
     func getAllForumList() {
         Utility.showActivityIndicator()
         let url = ViewFAQUrl
