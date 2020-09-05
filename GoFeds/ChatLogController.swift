@@ -464,7 +464,7 @@ class ChatLogController: UICollectionViewController , UITextFieldDelegate , UICo
         if text?.count ?? 0 > 0
         {
             Message.sendMessageToUser(self.recieverUID?.nsnumValue() ?? 0, text ?? "") { (_) in
-                
+
                 //When First Mesage Sent to any user, then need to add Observers
                 if self.messages.count == 0
                 {

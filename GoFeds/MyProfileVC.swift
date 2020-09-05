@@ -35,6 +35,8 @@ class MyProfileVC: UIViewController {
     var chat_timeStamp : [NSNumber] = []
     var chat_toId : [String] = []
     
+    var roomId: String!
+    
     //MARK:- ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,13 +125,16 @@ class MyProfileVC: UIViewController {
             ConversationManager.shared.checkAndCreateNewConversation(id.nsnumValue(), chatController.recieverName ?? "") { () in
                 
                 chatController.currentConversation = ConversationManager.shared.getConversationForUser(id.nsnumValue())
-                
-                self.navigationController?.pushViewController(chatController, animated: true)
+                self.roomId = chatController.currentConversation!.conversation!.conversationId
+//                self.navigationController?.pushViewController(chatController, animated: true)
+                self.performSegue(withIdentifier: "ProfileToChatDetailVC", sender: nil)
             }
         }
         else
         {
-            self.navigationController?.pushViewController(chatController, animated: true)
+            roomId = chatController.currentConversation!.conversation!.conversationId
+            performSegue(withIdentifier: "ProfileToChatDetailVC", sender: nil)
+//            self.navigationController?.pushViewController(chatController, animated: true)
         }
     }
     
@@ -137,6 +142,15 @@ class MyProfileVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileToChatDetailVC" {
+            if let destinationVC = segue.destination as? ChatDetailController {
+                destinationVC.roomId = roomId
+                destinationVC.receiverId = userData["user_id"] as? String
+                destinationVC.receiverUser = userData["username"] as? String
+            }
+        }
+    }
     
     let message = MessageModel()
     
