@@ -44,7 +44,7 @@ class ChatListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func loadChatList() {
         Utility.showActivityIndicator()
-        dbRef.child("messages").child("chatUsers").child(LoginSession.currentUserId).observeSingleEvent(of: .value) { (snapshot) in
+        dbRef.child("messages").child("chatUsers").child(LoginSession.getValueOf(key: SessionKeys.showId)).observeSingleEvent(of: .value) { (snapshot) in
             if let snapshotValue = snapshot.value as? [String: Any] {
                 for child in snapshotValue {
                     if let childValue = child.value as? [String: Any] {
@@ -59,8 +59,11 @@ class ChatListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         self.userList.append(user)
                     }
                 }
+                self.userList.sort(by: {$0.time > $1.time})
                 Utility.hideActivityIndicator()
                 self.chatListTableView.reloadData()
+            } else {
+                Utility.hideActivityIndicator()
             }
         }
     }

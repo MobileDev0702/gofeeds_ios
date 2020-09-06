@@ -42,6 +42,7 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
 //            NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
             
             UserDefaults.standard.set(LoginSession.getValueOf(key: SessionKeys.fToken), forKey: "FCMToken")
+            print(LoginSession.getValueOf(key: SessionKeys.fToken))
         } else {
             if let token = Messaging.messaging().fcmToken {
 //                let dataDict:[String: String] = ["token": token]

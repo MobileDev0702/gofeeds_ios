@@ -36,6 +36,9 @@ class MyProfileVC: UIViewController {
     var chat_toId : [String] = []
     
     var roomId: String!
+    var myId: Int!
+    var userId: Int!
+    var dbRef: DatabaseReference!
     
     //MARK:- ViewController Lifecycle
     override func viewDidLoad() {
@@ -46,11 +49,22 @@ class MyProfileVC: UIViewController {
         //print(CurrentUserInfo.showID!)
         self.setProfileInfo()
        // observeMessages()
+        initFirebase()
+        initData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func initFirebase() {
+        dbRef = Database.database().reference()
+    }
+    
+    func initData() {
+        myId = Int(LoginSession.getValueOf(key: SessionKeys.showId))!
+        userId = Int(userData["user_id"] as! String)!
     }
     
     func setProfileInfo(){
@@ -84,9 +98,37 @@ class MyProfileVC: UIViewController {
     @IBAction func startChatBtn(_ sender: Any) {
        
         // Get AllConversations First
-        ConversationManager.shared.getAllConversations()
+//        ConversationManager.shared.getAllConversations()
         
-        self.openChatController()
+        dbRef.child("messages").child("chatUsers").child("\(myId!)").observeSingleEvent(of: .value) { (snapshot) in
+            var roomCnt = 0
+            if snapshot.hasChildren() {
+                if let snapshotValue = snapshot.value as? [String: Any] {
+                    for child in snapshotValue {
+                        if let childValue = child.value as? [String: Any] {
+                            let receiverId = childValue["receiverId"] as! Int
+                            let senderId = childValue["senderId"] as! Int
+                            if (senderId == self.userId && receiverId == self.myId) || (senderId == self.myId && receiverId == self.userId) {
+                                self.roomId = childValue["conversationId"] as? String
+                            } else {
+                                roomCnt += 1
+                            }
+                        }
+                    }
+                    if snapshot.childrenCount == roomCnt {
+                        let roomRef = self.dbRef.child("messages").child("chatUsers").child("\(self.myId!)").childByAutoId()
+                        self.roomId = roomRef.key
+                        self.initChatUserDB(ref: roomRef)
+                    }
+                }
+            } else {
+                let roomRef = self.dbRef.child("messages").child("chatUsers").child("\(self.myId!)").childByAutoId()
+                self.roomId = roomRef.key
+                self.initChatUserDB(ref: roomRef)
+            }
+            self.performSegue(withIdentifier: "ProfileToChatDetailVC", sender: nil)
+        }
+//        self.openChatController()
     /*
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "chattingVC") as? chattingVC
         let id = Int(userData["user_id"] as! String)!
@@ -96,6 +138,41 @@ class MyProfileVC: UIViewController {
         
         self.navigationController?.pushViewController(vc!, animated: true)
  */
+    }
+    
+    func initChatUserDB(ref: DatabaseReference) {
+        ref.updateChildValues(["chatDeletedForUser": 0,
+                               "conversationId": ref.key!,
+                               "creatorId": myId!,
+                               "creatorUser": LoginSession.getValueOf(key: SessionKeys.userName),
+                               "deleted": 0,
+                               "isRead": 1,
+                               "lastMessage": "",
+                               "lastMessageTimeStamp": ServerValue.timestamp(),
+                               "messageId": "",
+                               "otherConversationId": "",
+                               "receiverId": userId!,
+                               "receiverUser": userData["username"] as! String,
+                               "senderId": myId!,
+                               "timestamp": ServerValue.timestamp()])
+        
+        dbRef.child("messages").child("chatUsers")
+            .child("\(userId!)")
+            .child(ref.key!)
+            .updateChildValues(["chatDeletedForUser": 0,
+                                "conversationId": ref.key!,
+                                "creatorId": myId!,
+                                "creatorUser": LoginSession.getValueOf(key: SessionKeys.userName),
+                                "deleted": 0,
+                                "isRead": 1,
+                                "lastMessage": "",
+                                "lastMessageTimeStamp": ServerValue.timestamp(),
+                                "messageId": "",
+                                "otherConversationId": "",
+                                "receiverId": myId!,
+                                "receiverUser": LoginSession.getValueOf(key: SessionKeys.userName),
+                                "senderId": userId!,
+                                "timestamp": ServerValue.timestamp()])
     }
     
     func openChatController(){

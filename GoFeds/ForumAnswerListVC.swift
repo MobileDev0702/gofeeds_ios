@@ -74,7 +74,7 @@ class ForumAnswerListVC: UIViewController {
         
         let url = UpdateVote
         
-        Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! + 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.currentUserId)]).responseJSON { response in
+        Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! + 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.getValueOf(key: SessionKeys.showId))]).responseJSON { response in
             let value = response.result.value as! [String:Any]?
             let BoolValue = value?["success"] as! Bool
             if(BoolValue == true) {
@@ -97,7 +97,7 @@ class ForumAnswerListVC: UIViewController {
         if (Int(cell.voteLabel.text!)! - 1) > -1 {
             let url = UpdateVote
             
-            Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! - 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.currentUserId)]).responseJSON { response in
+            Alamofire.request(url,  method: .post, parameters: ["id": data["answer_id"] as! String, "vote": Int(cell.voteLabel.text!)! - 1, "question_id": (questionData["question_id"] as! String), "user_id":(LoginSession.getValueOf(key: SessionKeys.showId))]).responseJSON { response in
                 let value = response.result.value as! [String:Any]?
                 let BoolValue = value?["success"] as! Bool
                 if(BoolValue == true) {

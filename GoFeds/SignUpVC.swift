@@ -31,6 +31,7 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var termsView: UIView!
+    @IBOutlet weak var termsTextView: UITextView!
     
     //@IBOutlet weak var baseViewHeight: NSLayoutConstraint!
     
@@ -56,6 +57,7 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
              name: .updateDesiredPorts,
              object: nil)
         ftoken = UserDefaults.standard.string(forKey: "FCMToken")
+        termsTextView.backgroundColor = UIColor.white
 //        currentPortTextFld.text = currPort
         // Do any additional setup after loading the view.
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.getToken(_:)), name: Notification.Name("FCMToken"), object: nil)

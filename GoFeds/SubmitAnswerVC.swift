@@ -33,7 +33,7 @@ class SubmitAnswerVC: UIViewController {
         let url = SubmitFAQAnswerUrl
         let newAnswerTxt = txtAnswer.text.replacingOccurrences(of: "'", with: "\\'")
         
-        Alamofire.request(url,  method: .post, parameters: ["question_id" : (questionData["question_id"] as! String),"user_id":(LoginSession.currentUserId),"answer":newAnswerTxt, "vote":0]).responseJSON { response in
+        Alamofire.request(url,  method: .post, parameters: ["question_id" : (questionData["question_id"] as! String),"user_id":(LoginSession.getValueOf(key: SessionKeys.showId)),"answer":newAnswerTxt, "vote":0]).responseJSON { response in
             
             let value = response.result.value as! [String:Any]?
             let BoolValue = value?["success"] as! Bool

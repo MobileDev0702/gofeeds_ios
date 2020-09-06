@@ -635,6 +635,7 @@ Last Updated: 07/2020
                         <outlet property="selectOfficeBtn" destination="fAB-hp-0Tb" id="dnH-9X-lRY"/>
                         <outlet property="selectRankBtn" destination="yBb-ux-oyR" id="TuU-JD-F0k"/>
                         <outlet property="submitBtn" destination="877-s7-1Kd" id="HUb-4U-eul"/>
+                        <outlet property="termsTextView" destination="jzB-hh-KDa" id="Hmk-RL-0HY"/>
                         <outlet property="termsView" destination="Ilr-Cg-Mrs" id="fEh-FI-19i"/>
                     </connections>
                 </viewController>

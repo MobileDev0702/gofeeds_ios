@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import IQKeyboardManagerSwift
+import Alamofire
 
 class ChatDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -26,10 +27,13 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var textAreaBackground: UIView!
     @IBOutlet weak var textAreaBottom: NSLayoutConstraint!
     
+    let currentUserFToken = LoginSession.getValueOf(key: SessionKeys.fToken)
+    
     var dbRef: DatabaseReference!
     var roomId: String!
     var receiverId: String!
     var receiverUser: String!
+    var reciever_ftoken: String!
     
     var messages: [MessageInfo] = [] {
       didSet {
@@ -56,9 +60,23 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
     
     func initData() {
         username.text = receiverUser
+        textView.backgroundColor = UIColor.white
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
+        
+        let url = MyProfileUrl
+        
+        Alamofire.request(url,  method: .post, parameters: ["user_id": receiverId!]).responseJSON { response in
+            let value = response.result.value as! [String:Any]?
+            let BoolValue = value?["success"] as! Bool
+            if(BoolValue == true) {
+                self.reciever_ftoken = value?["ftoken"] as? String
+            }else {
+                let okAction: AlertButtonWithAction = (.ok, nil)
+                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
+            }
+        }
     }
     
     func setUpTextView() {
@@ -162,7 +180,7 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                 let senderId = snapshotValue["userId"] as! String
                 let msgId = snapshot.key
                 
-                self.dbRef.child("messages").child("chatUsers").child(LoginSession.currentUserId).child(self.roomId).updateChildValues(["lastMessage": msg,
+                self.dbRef.child("messages").child("chatUsers").child(LoginSession.getValueOf(key: SessionKeys.showId)).child(self.roomId).updateChildValues(["lastMessage": msg,
                                                                                                                                    "lastMessageTimeStamp": ServerValue.timestamp(),
                                                                                                                                    "messageId": msgId])
                 
@@ -170,7 +188,7 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                                                                                                                              "lastMessageTimeStamp": ServerValue.timestamp(),
                                                                                                                              "messageId": msgId])
                 
-                if LoginSession.currentUserId == senderId {
+                if LoginSession.getValueOf(key: SessionKeys.showId) == senderId {
                     message = MessageInfo(msg, user: false)
                 } else {
                     message = MessageInfo(msg, user: true)
@@ -219,6 +237,17 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
             let messageRef = dbRef.child("messages").child("conversations").child(roomId).childByAutoId()
             setConversationDB(msgRef: messageRef)
             textView.text = ""
+            
+            let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
+            let seconds = timeStamp.doubleValue
+            let timeStampDate = NSDate(timeIntervalSince1970: seconds)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm:ss a "
+            let dateString = dateFormatter.string(from: timeStampDate as Date)
+            
+            DispatchQueue.main.async {
+                self.sendPush(txt: self.textView.text!, senderId: self.currentUserFToken,msgDate: dateString)
+            }
         } else {
             let okAction: AlertButtonWithAction = (.ok, nil)
             self.showAlertWith(message: .custom("Write your message!")!, actions: okAction)
@@ -231,7 +260,60 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                                   "id": msgRef.key!,
                                   "message": textView.text!,
                                   "timestamp": ServerValue.timestamp(),
-                                  "userId": LoginSession.currentUserId])
+                                  "userId": LoginSession.getValueOf(key: SessionKeys.showId)])
+    }
+    
+    func sendPush(txt:String,senderId:String,msgDate:String)
+    {
+        let url = UpdateBadge
+        
+        Alamofire.request(url,  method: .post, parameters: ["id": receiverId!, "reset": false]).responseJSON { response in
+            let value = response.result.value as! [String:Any]?
+            let BoolValue = value?["success"] as! Bool
+            if(BoolValue == true) {
+                let badgeCount = value?["badgeCount"] as! Int
+                var request = URLRequest(url: URL(string: "https://fcm.googleapis.com/fcm/send")!)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue("key=AAAA_QjVv44:APA91bEpd8HIWReOMvyPT_vtT-hPB4P6nHJqjNmnAKGL-ZTDEH0L9ptEUQ8bVQzllbAhQiiaHQ3_EFdoCqO1xbdxP1v5TNXG2_qtvgMwwZ8n-vAHPJWIv__PI7PPUO8AjNoQremscAma", forHTTPHeaderField: "Authorization")
+                let json = [
+                    "to" : self.reciever_ftoken! as String,
+                    "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
+                    "notification" : [
+                        "body":"You Have a New Message","badge":badgeCount, "mSender_id":senderId,"sound": "default"
+                    ],"data" : [
+                        "message" : txt,"mSender_id":senderId,"mReciver_id":self.reciever_ftoken,"date":msgDate,"mPost_id":self.currentUserFToken,
+                    ]
+                    ] as [String : Any]
+                
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                    request.httpBody = jsonData
+                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                        guard let data = data, error == nil else {
+                            print("Error=\(String(describing: error?.localizedDescription))")
+                            return
+                        }
+                        
+                        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                            // check for http errors
+                            print("Status Code should be 200, but is \(httpStatus.statusCode)")
+                            print("Response = \(String(describing: response))")
+                        }
+                        
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("responseString = \(String(describing: responseString))")
+                    }
+                    task.resume()
+                }
+                catch {
+                    print(error)
+                }
+            }else {
+                let okAction: AlertButtonWithAction = (.ok, nil)
+                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
+            }
+        }
     }
     /*
     // MARK: - Navigation

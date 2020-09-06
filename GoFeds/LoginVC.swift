@@ -98,7 +98,7 @@ class LoginVC: UIViewController {
                             office = value?["office"] as! String
                         }
                         let email = self.emailAddressText.text!
-
+                        
                         LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: showID, desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort, office: office)
 
                         // Clrar Trextfields

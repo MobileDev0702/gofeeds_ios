@@ -35,20 +35,22 @@ class ForumVC: UIViewController , QuestionSubmittedDelegate {
         Utility.showActivityIndicator()
         let url = ViewFAQUrl
         Alamofire.request(url,  method: .post, parameters: nil).responseJSON { response in
-            let value = response.result.value as! [String:Any]?
-            
-            print("\n\n\n  Forum Data")
-//             print(value!)
-            let BoolValue = value?["success"] as! Bool
-           
-            if(BoolValue == true) {
+            if let value = response.result.value as! [String:Any]? {
+                print("\n\n\n  Forum Data")
+    //             print(value!)
+                let BoolValue = value["success"] as! Bool
+               
+                if(BoolValue == true) {
+                    Utility.hideActivityIndicator()
+                    self.listArray = value["data"] as! NSArray
+                    self.forumTable.reloadData()
+                }else {
+                    Utility.hideActivityIndicator()
+                    let okAction: AlertButtonWithAction = (.ok, nil)
+                    self.showAlertWith(message: .custom("\(value["message"] ?? "")")!, actions: okAction)
+                }
+            } else {
                 Utility.hideActivityIndicator()
-                self.listArray = value?["data"] as! NSArray
-                self.forumTable.reloadData()
-            }else {
-                Utility.hideActivityIndicator()
-                let okAction: AlertButtonWithAction = (.ok, nil)
-                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
             }
         }
     }

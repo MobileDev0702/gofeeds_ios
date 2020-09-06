@@ -247,7 +247,7 @@ extension ConversationManager
     
     func createConverstaionWithoutMsg(_ toId: NSNumber, _ toName: String, _ otherConversationId: String, completion: @escaping () -> Swift.Void)
     {
-        let senderID = LoginSession.currentUserId.nsnumValue()
+        let senderID = LoginSession.getValueOf(key: SessionKeys.showId).nsnumValue()
         
         var conversationDict = [ConversationKeys.chatDeletedForUser: 0, ConversationKeys.conversationId: "", ConversationKeys.creatorId: senderID, ConversationKeys.receiverId: toId, ConversationKeys.creatorUser: LoginSession.getValueOf(key: SessionKeys.userName), ConversationKeys.deleted: 0, ConversationKeys.isRead: 1, ConversationKeys.lastMessage: "", ConversationKeys.lastMessageTimeStamp: Date.currentTimerIntervalGMT(), ConversationKeys.messageId: "", ConversationKeys.otherConversationId: otherConversationId, ConversationKeys.receiverUser: toName, ConversationKeys.senderId: senderID, ConversationKeys.timestamp: Date.currentTimerIntervalGMT()] as [String : Any]
         

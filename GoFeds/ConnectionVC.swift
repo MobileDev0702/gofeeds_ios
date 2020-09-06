@@ -35,6 +35,11 @@ class ConnectionVC: UIViewController {
         
         notificationCount.layer.cornerRadius = notificationCount.frame.size.height / 2
         notificationCount.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         
         let badgeCount = UserDefaults.standard.string(forKey: "BadgeCount")
         if badgeCount == "0" || badgeCount!.isEmpty {
@@ -43,12 +48,6 @@ class ConnectionVC: UIViewController {
             notificationCount.isHidden = false
             notificationCount.text = badgeCount
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-        self.tabBarController?.tabBar.isHidden = false
-        
         getExactMatchesList()
     }
     

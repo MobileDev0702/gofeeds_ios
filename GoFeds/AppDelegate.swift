@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
         if LoginSession.isActive() {
             let url = UpdateBadge
-
-            Alamofire.request(url,  method: .post, parameters: ["id": LoginSession.currentUserId, "reset": true]).responseJSON { response in
+            
+            Alamofire.request(url,  method: .post, parameters: ["id": LoginSession.getValueOf(key: SessionKeys.showId), "reset": true]).responseJSON { response in
                 let value = response.result.value as! [String:Any]?
                 let BoolValue = value?["success"] as! Bool
                 if(BoolValue == true) {
@@ -113,8 +113,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
         if LoginSession.isActive() {
             let url = UpdateBadge
-
-            Alamofire.request(url,  method: .post, parameters: ["id": LoginSession.currentUserId, "reset": true]).responseJSON { response in
+            
+            Alamofire.request(url,  method: .post, parameters: ["id": LoginSession.getValueOf(key: SessionKeys.showId), "reset": true]).responseJSON { response in
                 let value = response.result.value as! [String:Any]?
                 let BoolValue = value?["success"] as! Bool
                 if(BoolValue == true) {
