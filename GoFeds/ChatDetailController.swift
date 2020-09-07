@@ -11,7 +11,7 @@ import FirebaseDatabase
 import IQKeyboardManagerSwift
 import Alamofire
 
-class ChatDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
     private enum Constants {
       static let incomingMessageCell = "incomingMessageCell"
@@ -80,8 +80,8 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setUpTextView() {
-      textView.isScrollEnabled = false
-      textView.textContainer.heightTracksTextView = true
+      textView.isScrollEnabled = true
+//      textView.textContainer.heightTracksTextView = true
 
       textAreaBackground.layer.addShadow(
         color: UIColor(red: 189 / 255, green: 204 / 255, blue: 215 / 255, alpha: 54 / 100),
