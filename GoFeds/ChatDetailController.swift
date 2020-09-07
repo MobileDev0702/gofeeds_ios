@@ -236,7 +236,6 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
         if textView.text.count > 0 {
             let messageRef = dbRef.child("messages").child("conversations").child(roomId).childByAutoId()
             setConversationDB(msgRef: messageRef)
-            textView.text = ""
             
             let timeStamp : NSNumber =  NSNumber(value: Int(NSDate().timeIntervalSince1970))
             let seconds = timeStamp.doubleValue
@@ -248,6 +247,7 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
             DispatchQueue.main.async {
                 self.sendPush(txt: self.textView.text!, senderId: self.currentUserFToken,msgDate: dateString)
             }
+            textView.text = ""
         } else {
             let okAction: AlertButtonWithAction = (.ok, nil)
             self.showAlertWith(message: .custom("Write your message!")!, actions: okAction)
