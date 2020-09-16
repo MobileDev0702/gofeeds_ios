@@ -346,7 +346,7 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                       "desire_port":"\(desiredPortTextfld.text!)",
                       "office":officeTextfld.text!,
                       "ftoken":ftoken!,
-                      "device_id":"test"] as [String : Any]
+                      "device_id":"iPhone"] as [String : Any]
                    
                    Utility.showActivityIndicator()
                    print("url----------------: \(url)")
@@ -376,8 +376,9 @@ class SignUpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                         let ftoken = value?["ftoken"] as! String
                         let email = self.emailTextfld.text!
                         let office = value!["office"] as! String
+                        let image = value?["image"] as! String
                                               
-                        LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: "\(showID)", desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort,office:office)
+                        LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: "\(showID)", desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort,office:office, image: image)
                            
                         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC
                         self.navigationController?.isNavigationBarHidden = true

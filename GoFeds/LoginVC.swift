@@ -46,7 +46,7 @@ class LoginVC: UIViewController {
     
     //MARK:- Button Actions
     @IBAction func forgetPasswrdBtn(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "SignInToForgotPwdVC", sender: nil)
     }
     
     @IBAction func loginBtn(_ sender: Any) {
@@ -67,7 +67,7 @@ class LoginVC: UIViewController {
         }else {
             Utility.showActivityIndicator()
             let url = loginUrl
-            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "ftoken":ftoken!, "device_id":"asdfasd"]).responseJSON { response in
+            Alamofire.request(url,  method: .post, parameters: ["username":"\(emailAddressText.text!)", "password":"\(psswrdTextfld.text!)", "ftoken":ftoken!, "device_id":"iPhone"]).responseJSON { response in
                 
                 DispatchQueue.main.async {
                     
@@ -98,8 +98,9 @@ class LoginVC: UIViewController {
                             office = value?["office"] as! String
                         }
                         let email = self.emailAddressText.text!
+                        let image = value?["image"] as! String
                         
-                        LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: showID, desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort, office: office)
+                        LoginSession.start(ftoken: ftoken, userName: userName, email: email, showId: showID, desiredPort: desiredPort, rank: rank, agency: agency, currentPort: currentPort, office: office, image: image)
 
                         // Clrar Trextfields
                         weakSelf?.emailAddressText.text = ""

@@ -10,12 +10,14 @@ import UIKit
 
 struct MessageInfo {
     let content: String
+    let avatar: String
     let isUser: Bool
 }
 
 extension MessageInfo {
-    init(_ textMessage: String, user: Bool) {
+    init(_ textMessage: String, avatar: String, user: Bool) {
         self.content = textMessage
+        self.avatar = avatar
         self.isUser = user
   }
 }

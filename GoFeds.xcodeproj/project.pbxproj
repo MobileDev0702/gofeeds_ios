@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,7 +52,9 @@
 		5C6C0C4325029AB800547FC0 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C0C4025029AB800547FC0 /* MessageTableViewCell.swift */; };
 		5C6C0C4425029AB800547FC0 /* MessageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C0C4125029AB800547FC0 /* MessageInfo.swift */; };
 		5C6C0C462503342D00547FC0 /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C0C452503342D00547FC0 /* ChatListVC.swift */; };
+		5C7CA775250A6B3C00E27286 /* ForgotPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7CA774250A6B3C00E27286 /* ForgotPwdVC.swift */; };
 		5C96259424F300FE00EEA96D /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96259324F300FE00EEA96D /* PushNotificationManager.swift */; };
+		5CAE42D52511BF61006753E9 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 5CAE42D42511BF61006753E9 /* SwiftSMTP */; };
 		82611C0A24BD960500755976 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0924BD960500755976 /* CustomAlert.swift */; };
 		82611C0C24BD978100755976 /* LogoutAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0B24BD978100755976 /* LogoutAlertVC.swift */; };
 		82611C0E24BD9D5600755976 /* FireBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611C0D24BD9D5600755976 /* FireBaseHandler.swift */; };
@@ -113,6 +115,7 @@
 		5C6C0C4025029AB800547FC0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5C6C0C4125029AB800547FC0 /* MessageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInfo.swift; sourceTree = "<group>"; };
 		5C6C0C452503342D00547FC0 /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
+		5C7CA774250A6B3C00E27286 /* ForgotPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdVC.swift; sourceTree = "<group>"; };
 		5C96259324F300FE00EEA96D /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5CF2FFD524F026E4007EC846 /* GoFeds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoFeds.entitlements; sourceTree = "<group>"; };
 		82611C0924BD960500755976 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAE42D52511BF61006753E9 /* SwiftSMTP in Frameworks */,
 				2B82A614CE6B7D28E84C4454 /* Pods_GoFeds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +230,7 @@
 				2692A372248E9A5A00D1BA02 /* Chat Controllers */,
 				2685679A2483CDE200E77B23 /* popUp Controllers */,
 				0D1A7176244D71FB0098FA81 /* LoginVC.swift */,
+				5C7CA774250A6B3C00E27286 /* ForgotPwdVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +324,9 @@
 			dependencies = (
 			);
 			name = GoFeds;
+			packageProductDependencies = (
+				5CAE42D42511BF61006753E9 /* SwiftSMTP */,
+			);
 			productName = GoFeds;
 			productReference = 0DD726642449AB4900B74DFE /* FedsConnect.app */;
 			productType = "com.apple.product-type.application";
@@ -347,6 +355,9 @@
 				Base,
 			);
 			mainGroup = 0DD7265B2449AB4800B74DFE;
+			packageReferences = (
+				5CAE42D32511BF61006753E9 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
+			);
 			productRefGroup = 0DD726652449AB4900B74DFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -441,6 +452,7 @@
 				0D1A717F244DAF830098FA81 /* GradientButton.swift in Sources */,
 				0DA28F03244ED7AC0081020A /* Global.swift in Sources */,
 				0DAEDAEA24502313009A2C27 /* NewsFeedVC.swift in Sources */,
+				5C7CA775250A6B3C00E27286 /* ForgotPwdVC.swift in Sources */,
 				0D0686BB245AE14D0007833B /* ProfileVC.swift in Sources */,
 				2692A376248EE6B000D1BA02 /* chatMessageCell.swift in Sources */,
 				4474D31824638DD2002A9B6B /* AddQuestionVC.swift in Sources */,
@@ -616,7 +628,7 @@
 				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D7D3UF7ETZ;
 				INFOPLIST_FILE = GoFeds/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -624,7 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stackrage.gofeds;
 				PRODUCT_NAME = FedsConnect;
 				PROVISIONING_PROFILE_SPECIFIER = GoFedsDev;
@@ -642,7 +654,7 @@
 				CODE_SIGN_ENTITLEMENTS = GoFeds/GoFeds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D7D3UF7ETZ;
 				INFOPLIST_FILE = GoFeds/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -650,7 +662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stackrage.gofeds;
 				PRODUCT_NAME = FedsConnect;
 				PROVISIONING_PROFILE_SPECIFIER = GoFedsDev;
@@ -682,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CAE42D32511BF61006753E9 /* XCRemoteSwiftPackageReference "Swift-SMTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-SMTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CAE42D42511BF61006753E9 /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CAE42D32511BF61006753E9 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
+			productName = SwiftSMTP;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DD7265C2449AB4800B74DFE /* Project object */;
 }

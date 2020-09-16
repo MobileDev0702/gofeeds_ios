@@ -7,7 +7,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //MARK:- IBOutlets
     @IBOutlet weak var userImage: UIImageView!
@@ -31,6 +31,10 @@ class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     let Officies = ["OFO","BP"]
     let currPort = "AZ San Ysidrdo"
     
+    var imagePicker: UIImagePickerController!
+    private var imageToUpload: UIImage?
+    private var imageToUploadURL: String?
+    
     //MARK:- ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +44,24 @@ class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
              object: nil)
 //        currentPortTxtFld.text = currPort
         apiCall()
+        initUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func initUI() {
+        userImage.layer.cornerRadius = userImage.frame.size.height / 2
+        userImage.layer.borderColor = UIColor.white.cgColor
+        userImage.layer.borderWidth = 1
+        userImage.clipsToBounds = true
+    }
+    
     //MARK:- Button Actions
     
     func apiCall(){
+        Utility.showActivityIndicator()
         let url = MyProfileUrl
         let myID = UserDefaults.standard.integer(forKey: SessionKeys.showId)
         
@@ -62,17 +75,74 @@ class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
                 let office = value?["office"] as! String
                 let rank = value?["rank"] as! String
                 let myName = "\(value?["username"] as! String)"
+                let imageUrl: String!
+                if (value?["image"] as! String).isEmpty {
+                    imageUrl = "http://stackrage.com/gofeeds/images/user1.png"
+                } else {
+                    imageUrl = "http://stackrage.com/gofeeds/images/\(value?["image"] as! String)"
+                }
                 self.userName.text = myName
                 self.rankTextFld.text = rank
                 self.currentPortTxtFld.text = current_port
                 self.desiredTextFld.text = desire_port
                 self.agencyTextFld.text = agency
                 self.officeTextfld.text = office
-            }else {
+                self.userImage.sd_setImage(with: URL(string: imageUrl), completed: nil)
+            } else {
                 let okAction: AlertButtonWithAction = (.ok, nil)
                 self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
             }
+            Utility.hideActivityIndicator()
         }
+    }
+    
+    @IBAction func onClickProfileImageBtn(_ sender: UIButton) {
+        if imagePicker == nil {
+            imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+        }
+        
+        let sheet = UIAlertController(title: "Upload Photo", message: "Select", preferredStyle: .actionSheet)
+        let camera = UIAlertAction(title: "Take photo from camera", style: .default, handler: {(action) in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.imagePicker.allowsEditing = true
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.cameraCaptureMode = .photo
+                self.imagePicker.modalPresentationStyle = .fullScreen
+                self.present(self.imagePicker, animated: true, completion: nil)
+            } else {
+                DispatchQueue.main.async {
+                    let okAction: AlertButtonWithAction = (.ok, nil)
+                    self.showAlertWith(message: .custom("Sorry, this device has no camera")!, actions: okAction)
+                }
+            }
+        })
+        
+        let library = UIAlertAction(title: "Choose Image from library", style: .default, handler: { (action) in
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.modalPresentationStyle = .fullScreen
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        sheet.addAction(camera)
+        sheet.addAction(library)
+        sheet.addAction(cancel)
+        
+        present(sheet, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let chosenImage = info[.editedImage] as? UIImage {
+            self.imageToUpload = chosenImage
+            self.userImage.image = self.imageToUpload
+            self.userImage.contentMode = .scaleAspectFit
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onClickRankBtn(_ sender: UIButton) {
@@ -143,28 +213,95 @@ class ProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func onClickSaveBtn(_ sender: UIButton) {
-        let url = UpdateProfileUrl
-        let myID = UserDefaults.standard.integer(forKey: SessionKeys.showId)
+        let rank = rankTextFld.text!
+        let office = officeTextfld.text!
+        let agency = agencyTextFld.text!
+        let currentPort = currentPortTxtFld.text!
+        let desiredPort = desiredTextFld.text!
         
-        Alamofire.request(url,  method: .post, parameters: ["id": myID, "firstname": "", "lastname": "", "image": "", "rank": rankTextFld.text!, "agency": agencyTextFld.text!, "current_port": currentPortTxtFld.text!, "desire_port": desiredTextFld.text!, "office": officeTextfld.text!]).responseJSON { response in
-            let value = response.result.value as! [String:Any]?
-            let BoolValue = value?["success"] as! Bool
-//            if(BoolValue == true) {
-//
-//            }else {
-                let okAction: AlertButtonWithAction = (.ok, nil)
-                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
-//            }
-        }
+        Utility.showActivityIndicator()
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            if let data = self.imageToUpload?.pngData() {
+                    multipartFormData.append(data, withName: "image", fileName: "image\(LoginSession.getValueOf(key: SessionKeys.showId)).png", mimeType: "png")
+                }
+                
+                multipartFormData.append("hello".data(using: .utf8, allowLossyConversion: false)!, withName: "firstname")
+                multipartFormData.append("\(rank)".data(using: .utf8, allowLossyConversion: false)!, withName: "rank")
+                multipartFormData.append("\(office)".data(using: .utf8, allowLossyConversion: false)!, withName: "office")
+                multipartFormData.append("\(agency)".data(using: .utf8, allowLossyConversion: false)!, withName: "agency")
+                multipartFormData.append("\(currentPort)".data(using: .utf8, allowLossyConversion: false)!, withName: "current_port")
+                multipartFormData.append("\(desiredPort)".data(using: .utf8, allowLossyConversion: false)!, withName: "desire_port")
+                multipartFormData.append(LoginSession.getValueOf(key: SessionKeys.showId).data(using: .utf8, allowLossyConversion: false)!, withName: "id")
+            }, to: UpdateProfileUrl) { (encodingResult) in
+                
+                DispatchQueue.main.async {
+                    
+                    
+                    print("Encoding Result >>>>", encodingResult)
+                    
+                    Utility.hideActivityIndicator()
+                    
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print(response.result.value ?? [:])
+                            let responseValue = response.result.value as! [String:Any]?
+                            
+                            LoginSession.saveValue(value: self.rankTextFld.text!, key: SessionKeys.rank)
+                            LoginSession.saveValue(value: self.agencyTextFld.text!, key: SessionKeys.agency)
+                            LoginSession.saveValue(value: self.officeTextfld.text!, key: SessionKeys.office)
+                            LoginSession.saveValue(value: self.currentPortTxtFld.text!, key: SessionKeys.currentPort)
+                            LoginSession.saveValue(value: self.desiredTextFld.text!, key: SessionKeys.desiredPort)
+                            
+                            if(responseValue != nil) {
+                                
+                                let okAction: AlertButtonWithAction = (.ok, nil)
+                                self.showAlertWith(message: .custom("\(responseValue?["message"] ?? "")")!, actions: okAction)
+                                
+                                let userDataArr:[[String: Any]] = responseValue?["userdata"] as? [[String : Any]] ?? []
+                                let userData: [String : Any] = userDataArr[0] as? [String : Any] ?? [:]
+                                LoginSession.saveValue(value: userData["image"] as! String, key: SessionKeys.image)
+                            }
+                        }
+                    case .failure(let encodingError):
+                        print(encodingError)
+                    }
+                }
+            }
+        
+//        Alamofire.request(url,  method: .post, parameters: ["id": myID, "firstname": "", "lastname": "", "image": "", "rank": rankTextFld.text!, "agency": agencyTextFld.text!, "current_port": currentPortTxtFld.text!, "desire_port": desiredTextFld.text!, "office": officeTextfld.text!]).responseJSON { response in
+//            let value = response.result.value as! [String:Any]?
+//            let BoolValue = value?["success"] as! Bool
+////            if(BoolValue == true) {
+////
+////            }else {
+//                let okAction: AlertButtonWithAction = (.ok, nil)
+//                self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
+////            }
+//        }
     }
     
     @IBAction func logoutBtnAvction(_ sender: Any) {
-        LoginSession.destroy()
+        let alert = UIAlertController(title: "",
+          message: "Are you sure you want to logout?",
+          preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
+            LoginSession.destroy()
 //        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
 //        self.navigationController?.isNavigationBarHidden = true
-        if let rootNavigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
-            rootNavigationController.popToRootViewController(animated: true)
-        }
+            if let rootNavigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
+                rootNavigationController.popToRootViewController(animated: true)
+            }
+        })
+        
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func onDoneButtonTapped() {

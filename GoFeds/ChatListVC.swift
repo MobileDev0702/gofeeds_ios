@@ -20,6 +20,7 @@ class ChatListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var msg: String
         var conversationId: String
         var time: String
+        var image: String
     }
     
     var userList = [UserInfo]()
@@ -55,7 +56,8 @@ class ChatListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         let timestamp = childValue["lastMessageTimeStamp"] as! Int
                         let timeNum = NSNumber(value:timestamp)
                         let date = Date.dateFromTimeInterval(timeNum)
-                        let user = UserInfo(id: "\(receiverId)", username: receiverUser, msg: lastMsg, conversationId: conversationId, time: date)
+                        let image = childValue["image"] as! String
+                        let user = UserInfo(id: "\(receiverId)", username: receiverUser, msg: lastMsg, conversationId: conversationId, time: date, image: image)
                         self.userList.append(user)
                     }
                 }
@@ -78,6 +80,7 @@ class ChatListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.chatUsername.text = userList[indexPath.row].username
         cell.userMessage.text = userList[indexPath.row].msg
         cell.userDate.text = userList[indexPath.row].time
+        cell.userProfile.sd_setImage(with: URL(string: userList[indexPath.row].image), completed: nil)
         cell.backVW.bottomMaskViewShadow()
         
         return cell

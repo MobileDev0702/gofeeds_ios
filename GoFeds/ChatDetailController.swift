@@ -34,6 +34,8 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
     var receiverId: String!
     var receiverUser: String!
     var reciever_ftoken: String!
+    var deviceId: String!
+    var image: String!
     
     var messages: [MessageInfo] = [] {
       didSet {
@@ -50,7 +52,6 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
         initData()
         setUpTextView()
         setUpTableView()
-        loadMessage()
         startObservingKeyboard()
     }
     
@@ -72,6 +73,9 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
             let BoolValue = value?["success"] as! Bool
             if(BoolValue == true) {
                 self.reciever_ftoken = value?["ftoken"] as? String
+                self.deviceId = value?["device_id"] as? String
+                self.image = value?["image"] as? String
+                self.loadMessage()
             }else {
                 let okAction: AlertButtonWithAction = (.ok, nil)
                 self.showAlertWith(message: .custom("\(value?["message"] ?? "")")!, actions: okAction)
@@ -182,16 +186,18 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                 
                 self.dbRef.child("messages").child("chatUsers").child(LoginSession.getValueOf(key: SessionKeys.showId)).child(self.roomId).updateChildValues(["lastMessage": msg,
                                                                                                                                    "lastMessageTimeStamp": ServerValue.timestamp(),
-                                                                                                                                   "messageId": msgId])
+                                                                                                                                   "messageId": msgId,
+                                                                                                                                   "image": "http://stackrage.com/gofeeds/images/\(self.image!)"])
                 
                 self.dbRef.child("messages").child("chatUsers").child(self.receiverId).child(self.roomId).updateChildValues(["lastMessage": msg,
                                                                                                                              "lastMessageTimeStamp": ServerValue.timestamp(),
-                                                                                                                             "messageId": msgId])
+                                                                                                                             "messageId": msgId,
+                                                                                                                             "image": "http://stackrage.com/gofeeds/images/\(LoginSession.getValueOf(key: SessionKeys.image))"])
                 
                 if LoginSession.getValueOf(key: SessionKeys.showId) == senderId {
-                    message = MessageInfo(msg, user: false)
+                    message = MessageInfo(msg, avatar: LoginSession.getValueOf(key: SessionKeys.image), user: false)
                 } else {
-                    message = MessageInfo(msg, user: true)
+                    message = MessageInfo(msg, avatar: self.image, user: true)
                 }
                 self.messages.append(message)
                 self.scrollToLastCell()
@@ -243,9 +249,9 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm:ss a "
             let dateString = dateFormatter.string(from: timeStampDate as Date)
-            
+            let msg = self.textView.text
             DispatchQueue.main.async {
-                self.sendPush(txt: self.textView.text!, senderId: self.currentUserFToken,msgDate: dateString)
+                self.sendPush(txt: msg!, senderId: self.currentUserFToken,msgDate: dateString)
             }
             textView.text = ""
         } else {
@@ -276,15 +282,26 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                 request.httpMethod = "POST"
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 request.setValue("key=AAAA_QjVv44:APA91bEpd8HIWReOMvyPT_vtT-hPB4P6nHJqjNmnAKGL-ZTDEH0L9ptEUQ8bVQzllbAhQiiaHQ3_EFdoCqO1xbdxP1v5TNXG2_qtvgMwwZ8n-vAHPJWIv__PI7PPUO8AjNoQremscAma", forHTTPHeaderField: "Authorization")
-                let json = [
+                var json: [String: Any]
+                if self.deviceId! == "iPhone" {
+                    json = [
                     "to" : self.reciever_ftoken! as String,
                     "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
                     "notification" : [
-                        "body":"You Have a New Message","badge":badgeCount, "mSender_id":senderId,"sound": "default"
+                        "body":txt,"badge":badgeCount, "mSender_id":senderId,"sound": "default", "title":"You Have a New Message"
                     ],"data" : [
-                        "message" : txt,"mSender_id":senderId,"mReciver_id":self.reciever_ftoken,"date":msgDate,"mPost_id":self.currentUserFToken,
+                        "mSender_id":senderId,"mReciver_id":LoginSession.getValueOf(key: SessionKeys.showId), "badge":badgeCount, "roomId":self.roomId!, "receiverUser":LoginSession.getValueOf(key: SessionKeys.userName), "body":txt, "title":"You Have a New Message"
                     ]
                     ] as [String : Any]
+                } else {
+                    json = [
+                    "to" : self.reciever_ftoken! as String,
+                    "priority" : "high","message":txt,"mSender_id":senderId,"sound":"enabled",
+                    "data" : [
+                        "mSender_id":senderId,"mReciver_id":LoginSession.getValueOf(key: SessionKeys.showId), "badge":badgeCount, "roomId":self.roomId!, "receiverUser":LoginSession.getValueOf(key: SessionKeys.userName), "body":txt, "title":"You Have a New Message"
+                    ]
+                    ] as [String : Any]
+                }
                 
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)

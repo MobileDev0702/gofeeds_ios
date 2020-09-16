@@ -106,7 +106,7 @@ struct LoginSession {
     static let currentUserFToken = LoginSession.getValueOf(key: SessionKeys.fToken)
     static let currentUserId = LoginSession.getValueOf(key: SessionKeys.showId)
     
-    static func start(ftoken: String,userName:String,email:String,showId:String,desiredPort:String,rank:String,agency:String,currentPort:String,office: String){
+    static func start(ftoken: String,userName:String,email:String,showId:String,desiredPort:String,rank:String,agency:String,currentPort:String,office: String,image:String){
         defaults.set(showId, forKey: SessionKeys.showId)
         defaults.set(userName, forKey: SessionKeys.userName)
         defaults.set(email, forKey: SessionKeys.email)
@@ -116,6 +116,7 @@ struct LoginSession {
         defaults.set(currentPort, forKey: SessionKeys.currentPort)
         defaults.set(ftoken, forKey: SessionKeys.fToken)
         defaults.set(office, forKey: SessionKeys.office)
+        defaults.set(image, forKey: SessionKeys.image)
     }
     static func destroy(){
         defaults.removeObject(forKey: SessionKeys.userName)
@@ -127,6 +128,7 @@ struct LoginSession {
         defaults.removeObject(forKey: SessionKeys.agency)
         defaults.removeObject(forKey: SessionKeys.currentPort)
         defaults.removeObject(forKey: SessionKeys.office)
+        defaults.removeObject(forKey: SessionKeys.image)
         
     }
     static func isActive()-> Bool{
@@ -137,5 +139,9 @@ struct LoginSession {
     }
     static func getValueOf(key:String) -> String {
         return (defaults.value(forKey: key) as? String)!
+    }
+    
+    static func saveValue(value: String, key:String) {
+        defaults.set(value, forKey: key)
     }
 }

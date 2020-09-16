@@ -63,6 +63,12 @@ class MyProfileVC: UIViewController {
     }
     
     func initData() {
+        profilePicImgVW.layer.cornerRadius = profilePicImgVW.frame.size.height / 2
+        profilePicImgVW.layer.borderWidth = 1
+        profilePicImgVW.layer.borderColor = UIColor.white.cgColor
+        profilePicImgVW.clipsToBounds = true
+        profilePicImgVW.contentMode = .scaleAspectFit
+        
         myId = Int(LoginSession.getValueOf(key: SessionKeys.showId))!
         userId = Int(userData["user_id"] as! String)!
     }
@@ -83,6 +89,12 @@ class MyProfileVC: UIViewController {
         let office = userData["office"] as! String
         let current_port = userData["current_port"] as! String
         let desired_port = userData["desire_port"] as! String
+            let image: String!
+            if (userData["image"] as! String).isEmpty {
+                image = "user1.png"
+            } else {
+                image = userData["image"] as? String
+            }
         
         lblUserName.text = name
         rankTextfield.text = rank
@@ -90,6 +102,7 @@ class MyProfileVC: UIViewController {
         officeTextfield.text = office
         currentPortTextfield.text = current_port
         desiredPortTectfield.text = desired_port
+            profilePicImgVW.sd_setImage(with: URL(string: "http://stackrage.com/gofeeds/images/\(image!)"), completed: nil)
         }
     }
     
@@ -141,6 +154,12 @@ class MyProfileVC: UIViewController {
     }
     
     func initChatUserDB(ref: DatabaseReference) {
+        let image: String!
+        if (LoginSession.getValueOf(key: SessionKeys.image)).isEmpty {
+            image = "user.png"
+        } else {
+            image = LoginSession.getValueOf(key: SessionKeys.image)
+        }
         ref.updateChildValues(["chatDeletedForUser": 0,
                                "conversationId": ref.key!,
                                "creatorId": myId!,
@@ -154,8 +173,15 @@ class MyProfileVC: UIViewController {
                                "receiverId": userId!,
                                "receiverUser": userData["username"] as! String,
                                "senderId": myId!,
-                               "timestamp": ServerValue.timestamp()])
+                               "timestamp": ServerValue.timestamp(),
+                               "image": "http://stackrage.com/gofeeds/images/\(image!)"])
         
+        let myImage: String!
+        if (userData["image"] as! String).isEmpty {
+            myImage = "user.png"
+        } else {
+            myImage = LoginSession.getValueOf(key: SessionKeys.image)
+        }
         dbRef.child("messages").child("chatUsers")
             .child("\(userId!)")
             .child(ref.key!)
@@ -172,7 +198,8 @@ class MyProfileVC: UIViewController {
                                 "receiverId": myId!,
                                 "receiverUser": LoginSession.getValueOf(key: SessionKeys.userName),
                                 "senderId": userId!,
-                                "timestamp": ServerValue.timestamp()])
+                                "timestamp": ServerValue.timestamp(),
+                                "image": "http://stackrage.com/gofeeds/images/\(myImage!)"])
     }
     
     func openChatController(){

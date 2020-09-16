@@ -42,6 +42,7 @@ class IncomingMessageTableViewCell: UITableViewCell, MessageCell {
 //                  }
 //              }
 //          }
+        self.userImage.sd_setImage(with: URL(string: "http://stackrage.com/gofeeds/images/\(message.avatar)"), completed: nil)
         contentLabel.text = message.content
       }
     }
@@ -63,8 +64,8 @@ class IncomingMessageTableViewCell: UITableViewCell, MessageCell {
           offset: Constants.shadowOffset,
           radius: Constants.shadowRadius)
         userImage.layer.cornerRadius = userImage.bounds.height / 2
-//        userImage.layer.borderWidth = 1
-//        userImage.layer.borderColor = UIColor(red: 0.38, green: 0.69, blue: 0.97, alpha: 1.0).cgColor
+        userImage.layer.borderWidth = 1
+        userImage.layer.borderColor = UIColor.black.cgColor
         userImage.clipsToBounds = true
     }
 

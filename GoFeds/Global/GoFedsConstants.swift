@@ -37,7 +37,7 @@ struct SessionKeys {
     static let currentPort = "Key_currentPort"
     static let fToken = "Key_fToken"
     static let office = "Key_office"
-    
+    static let image = "image"
 }
 
 struct ChatKeys {

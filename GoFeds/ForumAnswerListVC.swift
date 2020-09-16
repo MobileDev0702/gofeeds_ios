@@ -130,6 +130,13 @@ extension ForumAnswerListVC: UITableViewDelegate, UITableViewDataSource {
         cell.voteLabel.text = (data["vote"] as! String)
         cell.upvoteBtn.tag = indexPath.row
         cell.downvoteBtn.tag = indexPath.row
+        let image: String!
+        if (data["image"] as! String).isEmpty {
+            image = "user.png"
+        } else {
+            image = data["image"] as? String
+        }
+        cell.userAvatar.sd_setImage(with: URL(string: "http://stackrage.com/gofeeds/images/\(image!)"), completed: nil)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

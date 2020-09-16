@@ -40,6 +40,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We are using a camera to enable you to take a pictures of your photo for Profile Picture</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We are using a camera to enable you to take a pictures of your photo for Profile Picture</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

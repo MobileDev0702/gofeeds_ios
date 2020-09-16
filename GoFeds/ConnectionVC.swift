@@ -74,8 +74,6 @@ class ConnectionVC: UIViewController {
                 return
             }
                            
-                print(value)
-                           
                 let BoolValue = value?["success"] as! Bool
                 Utility.hideActivityIndicator()
                     if(BoolValue == true) {
@@ -170,16 +168,29 @@ extension ConnectionVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let img: String!
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CommonTableViewCell
         if isExactSelected {
             let data = exactUserArray.object(at: indexPath.row) as! NSDictionary
             cell.connectUsername.text = (data["username"] as! String)
             cell.connectionPortName.text = (data["current_port"] as! String)
+            if (data["image"] as! String).isEmpty {
+                img = "user.png"
+            } else {
+                img = data["image"] as? String
+            }
+            cell.connectProfile.sd_setImage(with: URL(string: "http://stackrage.com/gofeeds/images/\(img!)"), completed: nil)
         }
         else {
             let data = possibleUserArray.object(at: indexPath.row) as! NSDictionary
             cell.connectUsername.text = (data["username"] as! String)
             cell.connectionPortName.text = (data["current_port"] as! String)
+            if (data["image"] as! String).isEmpty {
+                img = "user.png"
+            } else {
+                img = data["image"] as? String
+            }
+            cell.connectProfile.sd_setImage(with: URL(string: "http://stackrage.com/gofeeds/images/\(img!)"), completed: nil)
         }
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.backView.addShodow()
