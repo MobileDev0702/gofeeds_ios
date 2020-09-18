@@ -180,7 +180,7 @@ class MyProfileVC: UIViewController {
         if (userData["image"] as! String).isEmpty {
             myImage = "user.png"
         } else {
-            myImage = LoginSession.getValueOf(key: SessionKeys.image)
+            myImage = userData["image"] as? String
         }
         dbRef.child("messages").child("chatUsers")
             .child("\(userId!)")

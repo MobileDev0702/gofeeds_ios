@@ -183,21 +183,32 @@ class ChatDetailController: UIViewController, UITableViewDataSource, UITableView
                 let msg = snapshotValue["message"] as! String
                 let senderId = snapshotValue["userId"] as! String
                 let msgId = snapshot.key
-                
+                let userImage: String!
+                if self.image.isEmpty {
+                    userImage = "user.png"
+                } else {
+                    userImage = self.image
+                }
+                let myImage: String!
+                if (LoginSession.getValueOf(key: SessionKeys.image)).isEmpty {
+                    myImage = "user.png"
+                } else {
+                    myImage = LoginSession.getValueOf(key: SessionKeys.image)
+                }
                 self.dbRef.child("messages").child("chatUsers").child(LoginSession.getValueOf(key: SessionKeys.showId)).child(self.roomId).updateChildValues(["lastMessage": msg,
                                                                                                                                    "lastMessageTimeStamp": ServerValue.timestamp(),
                                                                                                                                    "messageId": msgId,
-                                                                                                                                   "image": "http://stackrage.com/gofeeds/images/\(self.image!)"])
+                                                                                                                                   "image": "http://stackrage.com/gofeeds/images/\(userImage!)"])
                 
                 self.dbRef.child("messages").child("chatUsers").child(self.receiverId).child(self.roomId).updateChildValues(["lastMessage": msg,
                                                                                                                              "lastMessageTimeStamp": ServerValue.timestamp(),
                                                                                                                              "messageId": msgId,
-                                                                                                                             "image": "http://stackrage.com/gofeeds/images/\(LoginSession.getValueOf(key: SessionKeys.image))"])
+                                                                                                                             "image": "http://stackrage.com/gofeeds/images/\(myImage!)"])
                 
                 if LoginSession.getValueOf(key: SessionKeys.showId) == senderId {
-                    message = MessageInfo(msg, avatar: LoginSession.getValueOf(key: SessionKeys.image), user: false)
+                    message = MessageInfo(msg, avatar: myImage, user: false)
                 } else {
-                    message = MessageInfo(msg, avatar: self.image, user: true)
+                    message = MessageInfo(msg, avatar: userImage, user: true)
                 }
                 self.messages.append(message)
                 self.scrollToLastCell()
